@@ -1,0 +1,46 @@
+name: Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+  push:
+    branches:
+      - main
+      - master
+
+  workflow_dispatch:
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository that will be reviewed.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Download the reviewer from the Code-Reviewer repository.
+      - name: Checkout Code Reviewer
+        uses: actions/checkout@v4
+        with:
+          repository: miguelromorsk06/Code-Reviewer
+          ref: main
+          path: reviewer
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r reviewer/requirements.txt
+
+      - name: Run AI Code Review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          DIFF_BASE: ${{ github.event.before }}
+        run: python reviewer/main.py
