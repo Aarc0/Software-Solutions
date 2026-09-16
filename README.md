@@ -23,3 +23,15 @@ Desarrollar una plataforma para la gestión de alquiler de viviendas siguiendo u
 ## Estado
 
 Sprint 0 - Preparación y planificación
+
+## Construcción y ejecución
+Requisitos:
+- Java 17
+Comandos:
+.\mvnw.cmd clean
+.\mvnw.cmd test
+.\mvnw.cmd package
+.\mvnw.cmd verify
+.\mvnw.cmd spring-boot:run
+URL local:
+http://localhost:8080
