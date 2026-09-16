@@ -1,0 +1,5 @@
+• spring-boot-starter-webmvc → aplicación web con Spring MVC:
+controladores y peticiones HTTP.
+• spring-boot-starter-thymeleaf → vistas HTML mediante plantillas Thymeleaf.
+• spring-boot-starter-webmvc-test → soporte para pruebas de Spring MVC.
+• spring-boot-starter-thymeleaf-test → soporte para pruebas de Thymeleaf
