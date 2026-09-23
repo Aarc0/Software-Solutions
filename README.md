@@ -35,3 +35,11 @@ Comandos:
 .\mvnw.cmd spring-boot:run
 URL local:
 http://localhost:8080
+
+## Documentacion del proyecto
+
+La documentación viva del proyecto se mantiene en:
+    
+- `docs/technical/`: base técnica y dependencias.
+- `docs/diagrams/`: diagramas y modelos.
+- `docs/decisions/`: decisiones relevantes.
