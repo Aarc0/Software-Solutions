@@ -27,4 +27,25 @@ public class Renter {
     //Un inquilino puede tener una o muchas reservas
     @OneToMany(mappedBy = "renter")
     private List<Booking> bookings = new ArrayList<>();
+
+    // Constructor getters y setters necesarios para la capa de aplicacion (service)
+    protected Renter(){
+
+    }
+
+    public Renter(User user){
+        this.user = user;
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public User getUser(){
+        return user;
+    }
+
+    public List<Booking> getBookings(){
+        return bookings;
+    }
 }
