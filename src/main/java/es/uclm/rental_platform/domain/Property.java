@@ -24,20 +24,22 @@ public class Property {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)// LAZY solo carga el objeto cuando se usa
     @JoinColumn(name = "owner_id")
     private Owner owner;
-    
-    @Column(nullable = false, unique = true)
-    private String address;
 
-    @Column(name = "night_price", nullable = false)
-    private Double nightPrice;
-    
     // Una propiedad puede tener una o muchas disponibilidades y reservas
     // Cascade se ocupa de propagar operaciones de padre a hijos y orphan de que no se quede ninguna fila de un objeto ya borrado
     @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Availability> availabilities = new ArrayList<>();
 
+    
     @OneToMany(mappedBy = "property")
     private List<Booking> bookings = new ArrayList<>();
+    
+
+    @Column(nullable = false, unique = true)
+    private String address;
+
+    @Column(name = "night_price", nullable = false)
+    private Double nightPrice;
 
     // Constructor getters y setters necesarios para la capa de aplicacion (service)
     protected Property() {
@@ -57,6 +59,14 @@ public class Property {
       return owner;
     }
 
+    public List<Availability> getAvailabilities(){
+      return availabilities;
+    }
+
+    public List<Booking> getBookings(){
+      return bookings;
+    }
+
     public String getAddress(){
       return address;
     }
@@ -65,11 +75,24 @@ public class Property {
       return nightPrice;
     }
 
-    public List<Availability> getAvailabilities(){
-      return availabilities;
+    public void setOwner(Owner owner) {
+      this.owner = owner;
     }
 
-    public List<Booking> getBookings(){
-      return bookings;
+    public void setAvailabilities(List<Availability> availabilities) {
+      this.availabilities = availabilities;
     }
+
+    public void setBookings(List<Booking> bookings) {
+      this.bookings = bookings;
+    }
+
+    public void setAddress(String address) {
+      this.address = address;
+    }
+
+    public void setNightPrice(Double nightPrice) {
+      this.nightPrice = nightPrice;
+    }
+
 }

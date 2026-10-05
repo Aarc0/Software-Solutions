@@ -37,7 +37,7 @@ public class User {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Renter renter;
-
+    
     // Constructor getters y setters necesarios para la capa de aplicacion (service)
     protected User(){
 
@@ -60,7 +60,7 @@ public class User {
         if(renter == null) renter = new Renter(this);
         return renter;
     }
-
+    
     // Comprobar Roles
     public boolean isOwner(){
         return owner != null;
@@ -109,4 +109,21 @@ public class User {
     public void setAddress(String address) { 
         this.address = address; 
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
 }

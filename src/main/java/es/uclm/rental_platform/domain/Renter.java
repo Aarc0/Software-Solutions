@@ -30,7 +30,7 @@ public class Renter {
 
     // Constructor getters y setters necesarios para la capa de aplicacion (service)
     protected Renter(){
-
+        
     }
 
     public Renter(User user){
@@ -47,5 +47,10 @@ public class Renter {
 
     public List<Booking> getBookings(){
         return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings)
+    {
+        this.bookings = bookings;
     }
 }
