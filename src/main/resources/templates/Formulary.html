@@ -45,6 +45,10 @@
           <label for="precio" class="mb-1 block text-sm font-medium text-gray-700">Precio (€)</label>
           <input id="precio" name="precio" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
+         <div>
+          <label for="Fianza" class="mb-1 block text-sm font-medium text-gray-700">Fianza</label>
+          <input id="Fianza" name="Fianza" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
         <div>
           <label for="m2" class="mb-1 block text-sm font-medium text-gray-700">Superficie (m²)</label>
           <input id="m2" name="m2" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
@@ -57,9 +61,6 @@
           <label for="Camas" class="mb-1 block text-sm font-medium text-gray-700">Camas</label>
           <input id="Camas" name="Camas" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
         <div>
           <label for="hab" class="mb-1 block text-sm font-medium text-gray-700">Habitaciones</label>
           <input id="hab" name="hab" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
@@ -69,7 +70,7 @@
           <input id="banos" name="banos" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
       </div>
-
+        </div>
       <div>
         <label for="direccion" class="mb-1 block text-sm font-medium text-gray-700">Dirección</label>
         <input id="direccion" name="direccion" type="text" placeholder="Calle, número, ciudad" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
@@ -114,7 +115,13 @@
             <label class="flex items-center gap-2">
             <input type="checkbox" name="comodidades" value="wifi" class="size-4 rounded border-gray-300 accent-blue-600">
             Wifi
+    
+             </label>
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="serviciosbasicos" value="serviciosbasicos" class="size-4 rounded border-gray-300 accent-blue-600">
+            Servicios Básicos(Toallas,Sábanas...)
             </label>
+         
         </div>
         </fieldset>
       <fieldset>
