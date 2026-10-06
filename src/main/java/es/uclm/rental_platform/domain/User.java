@@ -51,7 +51,7 @@ public class User {
 
     // Falta Documentar
     // Establecer Roles
-    public Owner becomOwner(){
+    public Owner becomeOwner(){
         if(owner == null) owner = new Owner(this);
         return owner;
     }
