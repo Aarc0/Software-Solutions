@@ -16,11 +16,11 @@ public class SecurityConfig {
             //auth es el configurador de reglas de acceso. El nombre es indiferente, se le entregan las reglas de la lamda expression
             .authorizeHttpRequests(auth -> auth //lambda expresion, dice que al objeto llamado auth se le aplican las siguientes reglas. 
                 //Siendo estas las reglas
-                .requestMatchers("/", "/error").permitAll()//Rutas permitidas a cualquiera
+                .requestMatchers("/", "/error,/login,").permitAll()//Rutas permitidas a cualquiera
                 .requestMatchers("/publish").authenticated()//Rutas que piden que el usario este autenticado
                 .anyRequest().permitAll()//Regla general. Permite el resto de rutas
             )
-            .formLogin(Customizer.withDefaults()); //Habilita el login predeterminado. Cambiar posteriormente al login en construccion
+            .formLogin(form -> form.loginPage("/login").permitAll());//Habilita el login hecho por el equipo.
 
         return http.build();
     }

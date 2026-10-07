@@ -12,9 +12,14 @@ public class HomeController {
      @GetMapping("/login")
     public String login(){
         return "login";
+  
     }@GetMapping("/Register")
     public String Register(){
         return "Register";
     }
-
+    
+    @GetMapping("/Formulary")
+    public String Formulary(){
+        return "Formulary";
+    }
 }
