@@ -23,15 +23,15 @@ public class PropertyService
         this.user_repo = user_repo;
     }
 
-    public Property crear(Owner owner, String address, Double nightPrice)
+    public Property crear(Long ownerID, String address, Double nightPrice)
     {
         try 
         {
             //Primero verificamos si el dueño existe en la BBDD
-            User user = user_repo.findById(owner.getId()).orElseThrow();   
+            User user = user_repo.findById(ownerID).orElseThrow();   
 
             //Si el usuario existe, creamos una propiedad con el dueño y los detalles de la viviendia
-            Property property = new Property(owner, address, nightPrice);
+            Property property = new Property(user.getOwner(), address, nightPrice);
 
             return property_repo.save(property);
         } 
