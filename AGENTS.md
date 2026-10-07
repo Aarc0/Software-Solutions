@@ -41,3 +41,18 @@ After implementation:
 - Do not silently change architecture.
 - Do not remove tests to make the build pass.
 - Do not integrante or approve changes.
+
+
+## Skill: Review persistence impementation
+
+### Qué debe revisar
+- Entidades, repositorios, servicios y controladores.
+- Logica de negocio fuera del controlador.
+- IDs, relaciones y cardinalidades JPA.
+- Dependencias y configuración H2/JPA.
+
+### Límites
+- No inventar requisitos ni relaciones.
+- No ampliar el alcance de la issue.
+- No aprobar ni integrar cambios.
+- El equipo ejecuta verify y decide.

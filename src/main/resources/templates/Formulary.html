@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar un inmueble</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-linear-to-r from-white to-gray-100">
+
+  <header class="py-10">
+    <h1 class="font-serif text-center tracking-wide text-4xl md:text-6xl">
+      Publique un inmueble
+    </h1>
+    <p class="mt-3 text-center text-gray-500">
+      Rellene los datos y su anuncio estará listo en minutos
+    </p>
+  </header>
+
+  <main class="mx-auto grid max-w-8xl gap-25 px-40 pb-16 lg:grid-cols-[1fr_1.5fr]">
+
+    <!-- Formulario -->
+    <!-- action="/publish y method="post" para enviar el formulario al controller, que esta esperando el post-->
+    <form action="/publish" method="post" 
+      class="space-y-5 rounded-2xl bg-white p-8 shadow-lg">
+x
+      <div>
+        <label for="tipo" class="mb-1 block text-sm font-medium text-gray-700">Tipo de inmueble</label>
+        <select id="tipo" name="tipo" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="duplex">Dúplex</option>
+          <option value="casa">Casa</option>
+          <option value="piso">Piso</option>
+          <option value="local-nave">Local o nave</option>
+          <option value="oficina">Oficina</option>
+          <option value="trastero">Trastero</option>
+          <option value="edificio">Edificio</option>
+          <option value="habitacion">Habitación</option>
+          <option value="Contenedor">Contenedor</option>
+          <option value="Albergue">Albuergue</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label for="precio" class="mb-1 block text-sm font-medium text-gray-700">Precio (€)</label>
+          <input id="precio" name="precio" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
+         <div>
+          <label for="Fianza" class="mb-1 block text-sm font-medium text-gray-700">Fianza (€)</label>
+          <input id="Fianza" name="Fianza" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
+        <div>
+          <label for="m2" class="mb-1 block text-sm font-medium text-gray-700">Superficie (m²)</label>
+          <input id="m2" name="m2" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
+        <div>
+          <label for="NumeroPersonas" class="mb-1 block text-sm font-medium text-gray-700">Número máximo de viajeros</label>
+          <input id="NumeroPersonas" name="NumeroPersonas" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
+        <div>
+          <label for="Camas" class="mb-1 block text-sm font-medium text-gray-700">Camas</label>
+          <input id="Camas" name="Camas" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
+        <div>
+          <label for="hab" class="mb-1 block text-sm font-medium text-gray-700">Habitaciones</label>
+          <input id="hab" name="hab" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
+        <div>
+          <label for="banos" class="mb-1 block text-sm font-medium text-gray-700">Baños</label>
+          <input id="banos" name="banos" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
+      </div>
+        </div>
+      <div>
+        <label for="direccion" class="mb-1 block text-sm font-medium text-gray-700">Dirección</label>
+        <input id="direccion" name="direccion" type="text" placeholder="Calle, número, ciudad" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+      </div>
+      
+      <div>
+        <label for="descripcion" class="mb-1 block text-sm font-medium text-gray-700">Descripción</label>
+        <textarea id="descripcion" name="descripcion" rows="4" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"></textarea>
+      </div>
+      <fieldset>
+        <legend class="mb-2 text-sm font-medium text-gray-700">Comodidades</legend>
+
+        <div class="grid grid-cols-2 gap-3 text-sm text-gray-700">
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="comodidades" value="ascensor" class="size-4 rounded border-gray-300 accent-blue-600">
+            Ascensor
+            </label>
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="comodidades" value="garaje" class="size-4 rounded border-gray-300 accent-blue-600">
+            Garaje
+            </label>
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="comodidades" value="terraza" class="size-4 rounded border-gray-300 accent-blue-600">
+            Terraza
+            </label>
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="comodidades" value="piscina" class="size-4 rounded border-gray-300 accent-blue-600">
+            Piscina
+            </label>
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="comodidades" value="aire-acondicionado" class="size-4 rounded border-gray-300 accent-blue-600">
+            Aire acondicionado
+            </label>
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="comodidades" value="calefaccion" class="size-4 rounded border-gray-300 accent-blue-600">
+            Calefacción
+            </label>
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="comodidades" value="amueblado" class="size-4 rounded border-gray-300 accent-blue-600">
+            Amueblado
+            </label>
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="comodidades" value="wifi" class="size-4 rounded border-gray-300 accent-blue-600">
+            Wifi
+    
+             </label>
+            <label class="flex items-center gap-2">
+            <input type="checkbox" name="serviciosbasicos" value="serviciosbasicos" class="size-4 rounded border-gray-300 accent-blue-600">
+            Servicios Básicos(Toallas,Sábanas...)
+            </label>
+         
+        </div>
+        </fieldset>
+      <fieldset>
+        <legend class="mb-2 text-sm font-medium text-gray-700">Normas</legend>
+        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600">
+          <label class="flex items-center gap-2"><input type="checkbox" name="Normas" value="Fumar">Se puede fumar</label>
+          <label class="flex items-center gap-2"><input type="checkbox" name="Normas" value="Chicas">Solo Chicas</label>
+          <label class="flex items-center gap-2"><input type="checkbox" name="Normas" value="Chicos">Solo Chicos</label>
+          <label class="flex items-center gap-2"><input type="checkbox" name="Normas" value="piscina">Mascotas</label>
+        </div>
+      </fieldset>
+
+      <div>
+        <label for="fotos" class="mb-1 block text-sm font-medium text-gray-700">Fotos</label>
+        <input id="fotos" name="fotos" type="file" accept="image/*" multiple class="w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-50 file:px-4 file:py-2 file:text-blue-700 hover:file:bg-blue-100" />
+      </div>
+
+      <button type="submit" class="w-full rounded-lg bg-blue-600 py-3 font-semibold text-white transition hover:bg-blue-700">
+        Publicar inmueble
+      </button>
+    </form>
+
+    <!-- Imagen -->
+    <div>
+      <img src="House.gif" alt="Casa" class="w-full rounded-2xl shadow-md lg:sticky lg:top-10" />
+    </div>
+
+  </main>
+
+</body>
+</html>
