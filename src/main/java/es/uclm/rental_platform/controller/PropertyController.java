@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import es.uclm.rental_platform.domain.Property;
+import es.uclm.rental_platform.service.PropertyService;
 
 @Controller 
 public class PropertyController {
@@ -14,6 +15,12 @@ public class PropertyController {
     //Objeto a utilizar para ayudar a llevar una traza de la comunicacion. Aparecera en la terminal
     private static final Logger logger =LoggerFactory.getLogger(PropertyController.class);
 
+    //Creacion del service
+    private final PropertyService propertyService;
+
+    public PropertyController(PropertyService propertyService) {
+        this.propertyService = propertyService;
+    }
 
     @GetMapping("/publish")
     public String formulary(){
@@ -24,7 +31,10 @@ public class PropertyController {
 
     @PostMapping("/publish") //Cuando se de a publicar inmueble se haga el post. Usar service para enviar datos a dom
     public String publishProperty(Property property){
+        String addres = property.getAddress();
+        double nightPrice = property.getNightPrice();
 
+        //propertyService.crear(owner, addres, nightPrice);
         logger.info("POST /publish recibido correctamente");
         return "redirect:/"; //Redirige al home.html
     }
