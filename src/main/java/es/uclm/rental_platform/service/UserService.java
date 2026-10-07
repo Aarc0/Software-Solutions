@@ -22,17 +22,12 @@ public class UserService {
 	}
 	public User crear(String email, String pass, String name){
 		//en el try catch se verifica que no exista el usuario pa evitar duplicados
-		try{
-			if(user_repo.existByEmail(email)){
-				throw new IllegalArgumentException("Este email ya esta registrado");
-			}
+		if(user_repo.existsByEmail(email)){
+			throw new IllegalArgumentException("Este email ya esta registrado");
 		}
 		User user = new User(email, pass, name);
 		return user_repo.save(user);
-
-		catch (IllegalArgumentException e){
-			System.out.println("Error del correo");	
-		}
 	}
-	
 }
+	
+

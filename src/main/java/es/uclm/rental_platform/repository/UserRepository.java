@@ -13,7 +13,8 @@ public interface UserRepository extends JpaRepository<User,Long>
 
     //Reescribo los métodos para que podamos saber de manera
     //más visual qué operaciones hay
-    
+    boolean existsByEmail(String email);
+
     @Override 
     <S extends User> S save(S entity); //INSERT / UPDATE entidad
 
