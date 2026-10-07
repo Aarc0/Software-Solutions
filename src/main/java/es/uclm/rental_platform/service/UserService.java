@@ -10,7 +10,7 @@ import es.uclm.rental_platform.domain.User;
 import es.uclm.rental_platform.repository.PropertyRepository;
 import es.uclm.rental_platform.repository.UserRepository;
 
-@service
+@Service
 public class UserService {
 	private final UserRepository user_repo;
 	private final PropertyRepository property_repo;
@@ -21,11 +21,17 @@ public class UserService {
 		
 	}
 	public User crear(String email, String pass, String name){
+		//en el try catch se verifica que no exista el usuario pa evitar duplicados
 		try{
-			//falta try-catch
-		}catch (NoSuchElementException e)
-		{
-		
+			if(user_repo.existByEmail(email)){
+				throw new IllegalArgumentException("Este email ya esta registrado");
+			}
+		}
+		User user = new User(email, pass, name);
+		return user_repo.save(user);
+
+		catch (IllegalArgumentException e){
+			System.out.println("Error del correo");	
 		}
 	}
 	
