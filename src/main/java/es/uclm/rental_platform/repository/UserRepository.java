@@ -18,6 +18,8 @@ public interface UserRepository extends JpaRepository<User,Long>
     @Override 
     <S extends User> S save(S entity); //INSERT / UPDATE entidad
 
+    Optional<User> findByEmail(String email); //Necesario para verificar el inicio de sesion
+
     @Override
     Optional<User> findById(Long id);
 
