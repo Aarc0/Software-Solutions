@@ -1,6 +1,7 @@
 package es.uclm.rental_platform.service;
 
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -40,5 +41,16 @@ public class PropertyService
             throw new IllegalArgumentException("El usuario que se ha intentado obtener no existe");
         }
 
+    }
+
+    public Property crear(String email, String address, Double nightPrice)
+    {
+        Optional<User> consulta = user_repo.findByEmail(email);
+        if (consulta.isEmpty())
+        {
+            throw new IllegalArgumentException("El usuario con email " + email + " no existe");
+        }
+
+        return crear(consulta.get().getId(), address, nightPrice);
     }
 }
