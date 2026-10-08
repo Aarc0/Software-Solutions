@@ -17,6 +17,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth //lambda expresion, dice que al objeto llamado auth se le aplican las siguientes reglas. 
                 //Siendo estas las reglas
                 .requestMatchers("/", "/error").permitAll()//Rutas permitidas a cualquiera
+                //.requestMatchers("/publish").hasRole("OWNER") //solo los que tenga el rol de owner 
                 .requestMatchers("/publish").authenticated()//Rutas que piden que el usario este autenticado
                 .anyRequest().permitAll()//Regla general. Permite el resto de rutas
             )
