@@ -1,4 +1,4 @@
-package es.uclm.rental_platform.service;
+// package es.uclm.rental_platform.service;
 
 import org.springframework.stereotype.Service;
 

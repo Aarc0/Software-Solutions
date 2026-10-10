@@ -33,7 +33,7 @@ public class SecurityConfig {
             .headers(headers -> headers
                 .frameOptions(frame -> frame.sameOrigin())
             )
-            .formLogin(Customizer.withDefaults()); //Habilita el login predeterminado. Cambiar posteriormente al login en construccion
+            .formLogin(form -> form.loginPage("/login").permitAll());//Habilita el login hecho por el equipo.
 
         return http.build();
     }
