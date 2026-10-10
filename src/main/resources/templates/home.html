@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Rental Platform</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar un inmueble</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <h1>Plataforma de alquiler de
-viviendas</h1>
-    <p>Aplicación Spring Boot en
-ejecución.</p>
-</body>
-</html>
+
+<body class="min-h-screen bg-linear-to-r from-white to-gray-100">
+<style type="text/tailwindcss">
+    @theme {
+    --animate-marquee: marquee 20s linear infinite;
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+  }
+</style>
+  <header class="py-10">
+    <h1 class="font-serif text-center tracking-wide text-4xl md:text-6xl">
+      Bienvenido a DD OS
+    </h1>
+    <p class="mt-3 text-center text-gray-500">
+      Su apliación de inmuebles de confianza 
+    </p>
+  <div class="overflow-hidden w-full">
+  <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
+
+    <!-- Grupo original -->
+    <img src="foto1.jpg" class="w-80 h-56 object-cover rounded-xl mr-4 shrink-0" alt="">
+    <img src="foto2.jpg" class="w-80 h-56 object-cover rounded-xl mr-4 shrink-0" alt="">
+    <img src="foto3.jpg" class="w-80 h-56 object-cover rounded-xl mr-4 shrink-0" alt="">
+    <img src="foto4.jpg" class="w-80 h-56 object-cover rounded-xl mr-4 shrink-0" alt="">
+
+    <!-- Copia exacta del grupo (para que el bucle sea continuo) -->
+    <img src="foto1.jpg" class="w-80 h-56 object-cover rounded-xl mr-4 shrink-0" alt="" aria-hidden="true">
+    <img src="foto2.jpg" class="w-80 h-56 object-cover rounded-xl mr-4 shrink-0" alt="" aria-hidden="true">
+    <img src="foto3.jpg" class="w-80 h-56 object-cover rounded-xl mr-4 shrink-0" alt="" aria-hidden="true">
+    <img src="foto4.jpg" class="w-80 h-56 object-cover rounded-xl mr-4 shrink-0" alt="" aria-hidden="true">
+
+  </div>
+</div>
+  </header>
