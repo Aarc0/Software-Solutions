@@ -21,7 +21,7 @@ public class Property {
     private Long id;
     
     // Reflejar que un propietario puede tener una o muchas propiedades
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)// LAZY solo carga el objeto cuando se usa
+    @ManyToOne(fetch = FetchType.LAZY)// LAZY solo carga el objeto cuando se usa
     @JoinColumn(name = "owner_id")
     private Owner owner;
 

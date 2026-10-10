@@ -19,7 +19,7 @@ public class SecurityConfig {
                 //Siendo estas las reglas
                 .requestMatchers("/", "/error").permitAll()//Rutas permitidas a cualquiera
                 //.requestMatchers("/publish").hasRole("OWNER") //solo los que tenga el rol de owner 
-                .requestMatchers("/publish").authenticated()//Rutas que piden que el usario este autenticado
+                //.requestMatchers("/publish").authenticated()//Rutas que piden que el usario este autenticado
                 .anyRequest().permitAll()//Regla general. Permite el resto de rutas
 
                 //Esto solo tiene que estar activo cuando ya se "despliegue" la app

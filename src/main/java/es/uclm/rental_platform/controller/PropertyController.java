@@ -1,7 +1,6 @@
 package es.uclm.rental_platform.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,12 +31,8 @@ public class PropertyController {
 
     @PostMapping("/publish") //Cuando se de a publicar inmueble se haga el post. Usar service para enviar datos a dom
     // Authentication contiene la identidad de la sesión; getName() devuelve el email autenticado.
-    public String publishProperty(Property property, Authentication authentication){
-        this.propertyService.crear(
-                authentication.getName(),
-                property.getAddress(),
-                property.getNightPrice()
-        );
+    public String publishProperty(Property property){
+        this.propertyService.crear(property);
         logger.info("POST /publish recibido correctamente");
         return "redirect:/"; //Redirige al home.html
     }

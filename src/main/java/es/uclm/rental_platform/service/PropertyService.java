@@ -47,6 +47,11 @@ public class PropertyService
 
     }
 
+    public Property crear(Property property)
+    {
+        return property_repo.save(property);
+    }
+
     public Property crear(String email, String address, Double nightPrice)
     {
         Optional<User> consulta = user_repo.findByEmail(email);
