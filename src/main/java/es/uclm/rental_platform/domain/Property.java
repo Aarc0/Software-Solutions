@@ -5,6 +5,8 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -38,17 +40,44 @@ public class Property {
     @Column(nullable = false, unique = true)
     private String address;
 
+  
+    @Column(name = "type", nullable = false)
+    private String type;
+
     @Column(name = "night_price", nullable = false)
     private Double nightPrice;
+
+    @Column(name = "bail", nullable = true)
+    private Double bail;
+  
+    @Column(name = "surface", nullable = false)
+    private Integer surface;
+
+    @Column(name = "maxTravelers", nullable = true)
+    private Integer maxTravelers;
+
+    @Column(name = "beds", nullable = true)
+    private Integer beds;
+
+    @Column(name = "rooms", nullable = true)
+    private Integer rooms;
+
+    @Column(name = "baths", nullable = true)
+    private Integer baths;
+
+    @Column(name = "description", nullable = true)
+    private String description;
 
     // Constructor getters y setters necesarios para la capa de aplicacion (service)
     protected Property() {
     }
 
-    public Property(Owner owner, String address, Double nightPrice) {
+    public Property(Owner owner, String address, String type, Double nightPrice, Integer surface) {
         this.owner = owner;
         this.address = address;
+        this.type = type;
         this.nightPrice = nightPrice;
+        this.surface = surface;
     }
 
     public Long getId() {
@@ -71,8 +100,40 @@ public class Property {
       return address;
     }
 
+    public String getType(){
+      return type;
+    }
+
     public Double getNightPrice(){
       return nightPrice;
+    }
+
+    public Double getBail(){
+      return bail;
+    }
+
+    public Integer getSurface(){
+      return surface;
+    }
+
+    public Integer getMaxTravelers(){
+      return maxTravelers;
+    }
+
+    public Integer getBeds(){
+      return beds;
+    }
+
+    public Integer getRooms(){
+      return rooms;
+    }
+
+    public Integer getBaths(){
+      return baths;
+    }
+
+    public String getDescription(){
+      return description;
     }
 
     public void setOwner(Owner owner) {
@@ -91,8 +152,40 @@ public class Property {
       this.address = address;
     }
 
+    public void setType(String type) {
+      this.type = type;
+    }
+
     public void setNightPrice(Double nightPrice) {
       this.nightPrice = nightPrice;
+    }
+
+    public void setBail(Double bail) {
+        this.bail = bail;
+    }
+
+    public void setSurface(Integer surface) {
+        this.surface = surface;
+    }
+
+    public void setMaxTravelers(Integer maxTravelers) {
+        this.maxTravelers = maxTravelers;
+    }
+
+    public void setBeds(Integer beds) {
+        this.beds = beds;
+    }
+
+    public void setRooms(Integer rooms) {
+        this.rooms = rooms;
+    }
+
+    public void setBaths(Integer baths) {
+        this.baths = baths;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

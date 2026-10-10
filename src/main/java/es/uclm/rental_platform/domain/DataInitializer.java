@@ -31,16 +31,16 @@ public class DataInitializer
             u4.becomeRenter();
             userRepository.save(u4);
 
-            Property p1 = new Property(u1.getOwner(),"Calle constitucion",(double)2);
+            Property p1 = new Property(u1.getOwner(),"Calle constitucion", "storage_room",(double)2,  75);
             propertyRepository.save(p1);
 
-            Property p2 = new Property(u1.getOwner(),"Calle hidalgo",(double)4);
+            Property p2 = new Property(u1.getOwner(),"Calle hidalgo", "flat", (double)4,  187);
             propertyRepository.save(p2);
 
-            Property p3 = new Property(u2.getOwner(),"Calle carlos III",(double)6);
+            Property p3 = new Property(u2.getOwner(),"Calle carlos III", "office", (double)6,  200);
             propertyRepository.save(p3);
 
-            Property p4 = new Property(u2.getOwner(),"Calle aguacate",(double)8);
+            Property p4 = new Property(u2.getOwner(),"Calle aguacate", "local_or_warehouse", (double)8,  1465);
             propertyRepository.save(p4);
 
             
