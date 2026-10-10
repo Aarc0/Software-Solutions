@@ -5,11 +5,15 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import es.uclm.rental_platform.domain.Owner;
 import es.uclm.rental_platform.domain.Property;
 import es.uclm.rental_platform.domain.User;
 import es.uclm.rental_platform.repository.PropertyRepository;
 import es.uclm.rental_platform.repository.UserRepository;
+
+/*
+
+
+*/
 
 @Service 
 public class PropertyService 
@@ -23,7 +27,7 @@ public class PropertyService
         this.property_repo = property_repo;
         this.user_repo = user_repo;
     }
-
+    
     public Property crear(Long ownerID, String address, Double nightPrice)
     {
         try 

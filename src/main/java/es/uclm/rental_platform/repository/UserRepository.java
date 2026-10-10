@@ -35,4 +35,5 @@ public interface UserRepository extends JpaRepository<User,Long>
     @Override
     boolean existsById(Long id);          //Comprueba si existe una entidad con ese ID
 
+
 }

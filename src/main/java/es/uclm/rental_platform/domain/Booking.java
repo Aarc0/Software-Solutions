@@ -2,6 +2,8 @@ package es.uclm.rental_platform.domain;
 
 import java.time.LocalDate;
 
+import org.springframework.cglib.core.Local;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -47,6 +49,15 @@ public class Booking {
 
     @Column(nullable = false)
     private boolean paid;
+
+
+    public Booking(Property property,Renter renter, LocalDate startDate, LocalDate endDate)
+    {
+        this.property = property;
+        this.renter = renter;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
 
     public Long getId() {
         return id;
