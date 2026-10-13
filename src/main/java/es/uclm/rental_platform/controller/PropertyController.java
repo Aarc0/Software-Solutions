@@ -30,11 +30,9 @@ public class PropertyController {
     }
 
     @PostMapping("/publish") //Cuando se de a publicar inmueble se haga el post. Usar service para enviar datos a dom
+    // Authentication contiene la identidad de la sesión; getName() devuelve el email autenticado.
     public String publishProperty(Property property){
-        String addres = property.getAddress();
-        double nightPrice = property.getNightPrice();
-
-        //propertyService.crear(owner, addres, nightPrice);
+        this.propertyService.crear(property);
         logger.info("POST /publish recibido correctamente");
         return "redirect:/"; //Redirige al home.html
     }

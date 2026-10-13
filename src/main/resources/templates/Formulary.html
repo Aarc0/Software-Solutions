@@ -25,21 +25,22 @@
     <form action="/publish" method="post" 
       class="space-y-5 rounded-2xl bg-white p-8 shadow-lg">
 
-
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        
       <div>
-        <label for="tipo" class="mb-1 block text-sm font-medium text-gray-700">Tipo de inmueble</label>
-        <select id="tipo" name="tipo" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200">
+        <label for="type" class="mb-1 block text-sm font-medium text-gray-700">Tipo de inmueble</label>
+        <select id="type" name="type" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200">
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="duplex">Dúplex</option>
-          <option value="casa">Casa</option>
-          <option value="piso">Piso</option>
-          <option value="local-nave">Local o nave</option>
-          <option value="oficina">Oficina</option>
-          <option value="trastero">Trastero</option>
-          <option value="edificio">Edificio</option>
-          <option value="habitacion">Habitación</option>
-          <option value="Contenedor">Contenedor</option>
-          <option value="Albergue">Albuergue</option>
+          <option value="house">Casa</option>
+          <option value="flat">Piso</option>
+          <option value="local_or_warehouse">Local o nave</option>
+          <option value="office">Oficina</option>
+          <option value="storage_room">Trastero</option>
+          <option value="building">Edificio</option>
+          <option value="room">Habitación</option>
+          <option value="container">Contenedor</option>
+          <option value="hostel">Albuergue</option>
         </select>
       </div>
 
@@ -49,28 +50,28 @@
           <input id="nightPrice" name="nightPrice" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
          <div>
-          <label for="Fianza" class="mb-1 block text-sm font-medium text-gray-700">Fianza (€)</label>
-          <input id="Fianza" name="Fianza" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+          <label for="bail" class="mb-1 block text-sm font-medium text-gray-700">Fianza (€)</label>
+          <input id="bail" name="bail" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
         <div>
-          <label for="m2" class="mb-1 block text-sm font-medium text-gray-700">Superficie (m²)</label>
-          <input id="m2" name="m2" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+          <label for="surface" class="mb-1 block text-sm font-medium text-gray-700">Superficie (m²)</label>
+          <input id="surface" name="surface" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
         <div>
-          <label for="NumeroPersonas" class="mb-1 block text-sm font-medium text-gray-700">Número máximo de viajeros</label>
-          <input id="NumeroPersonas" name="NumeroPersonas" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+          <label for="maxTravelers" class="mb-1 block text-sm font-medium text-gray-700">Número máximo de viajeros</label>
+          <input id="maxTravelers" name="maxTravelers" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
         <div>
-          <label for="Camas" class="mb-1 block text-sm font-medium text-gray-700">Camas</label>
-          <input id="Camas" name="Camas" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+          <label for="beds" class="mb-1 block text-sm font-medium text-gray-700">Camas</label>
+          <input id="beds" name="beds" type="number" min="0" placeholder="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
         <div>
-          <label for="hab" class="mb-1 block text-sm font-medium text-gray-700">Habitaciones</label>
-          <input id="hab" name="hab" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+          <label for="rooms" class="mb-1 block text-sm font-medium text-gray-700">Habitaciones</label>
+          <input id="rooms" name="rooms" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
         <div>
-          <label for="banos" class="mb-1 block text-sm font-medium text-gray-700">Baños</label>
-          <input id="banos" name="banos" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+          <label for="baths" class="mb-1 block text-sm font-medium text-gray-700">Baños</label>
+          <input id="baths" name="baths" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
       </div>
         </div>
@@ -80,8 +81,8 @@
       </div>
       
       <div>
-        <label for="descripcion" class="mb-1 block text-sm font-medium text-gray-700">Descripción</label>
-        <textarea id="descripcion" name="descripcion" rows="4" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"></textarea>
+        <label for="description" class="mb-1 block text-sm font-medium text-gray-700">Descripción</label>
+        <textarea id="description" name="description" rows="4" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"></textarea>
       </div>
       <fieldset>
         <legend class="mb-2 text-sm font-medium text-gray-700">Comodidades</legend>

@@ -13,9 +13,12 @@ public interface UserRepository extends JpaRepository<User,Long>
 
     //Reescribo los métodos para que podamos saber de manera
     //más visual qué operaciones hay
-    
+    boolean existsByEmail(String email);
+
     @Override 
     <S extends User> S save(S entity); //INSERT / UPDATE entidad
+
+    Optional<User> findByEmail(String email); //Necesario para verificar el inicio de sesion
 
     @Override
     Optional<User> findById(Long id);
@@ -31,5 +34,6 @@ public interface UserRepository extends JpaRepository<User,Long>
 
     @Override
     boolean existsById(Long id);          //Comprueba si existe una entidad con ese ID
+
 
 }
