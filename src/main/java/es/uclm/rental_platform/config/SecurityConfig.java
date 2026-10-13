@@ -17,7 +17,8 @@ public class SecurityConfig {
             //auth es el configurador de reglas de acceso. El nombre es indiferente, se le entregan las reglas de la lamda expression
             .authorizeHttpRequests(auth -> auth //lambda expresion, dice que al objeto llamado auth se le aplican las siguientes reglas. 
                 //Siendo estas las reglas
-                .requestMatchers("/", "/error").permitAll()//Rutas permitidas a cualquiera
+                .requestMatchers("/", "/error","/login", "/Register").permitAll()//Rutas permitidas a cualquiera
+                .requestMatchers("/publish").authenticated()
                 //.requestMatchers("/publish").hasRole("OWNER") //solo los que tenga el rol de owner 
                 //.requestMatchers("/publish").authenticated()//Rutas que piden que el usario este autenticado
                 .anyRequest().permitAll()//Regla general. Permite el resto de rutas
@@ -25,6 +26,7 @@ public class SecurityConfig {
                 //Esto solo tiene que estar activo cuando ya se "despliegue" la app
                 //.requestMatchers("/h2-console").denyAll() 
             )
+
             //Evita exigir token csrf cuando se accede a la ruta de la bbdd
             .csrf(csrf -> csrf 
                 .ignoringRequestMatchers(PathRequest.toH2Console())
@@ -33,8 +35,8 @@ public class SecurityConfig {
             .headers(headers -> headers
                 .frameOptions(frame -> frame.sameOrigin())
             )
-            .formLogin(form -> form.loginPage("/login").permitAll());//Habilita el login hecho por el equipo.
-
+            .formLogin(form -> form.loginPage("/login").permitAll()).rememberMe(Customizer.withDefaults());//Habilita el login hecho por el equipo.
+                
         return http.build();
     }
 }
