@@ -10,3 +10,6 @@
 
 ### Creado un override del metodo Crear en la clase PropertyService
  - Se le ha pedido que hiciera un override al metodo crear() en PropertyService para que aceptara un email en vez de ID
+
+### Creada una plantilla acerca de la reunion del cierre del Hito-1
+ - Se ha usado al agente para la creacion de una plantilla en un **.md** que deje reflejado de alguna manera el estado en el que se cerro la última reunion del equipo previa a la Entrega Intermedia
