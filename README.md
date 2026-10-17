@@ -25,6 +25,8 @@ Desarrollar una plataforma para la gestión de alquiler de viviendas siguiendo u
 ## Estado
 
 Sprint 0 - Preparación y planificación
+Sprint 1 - Desarrollo de las primeras parte de la 1º Issue
+Sprint 2 - Finalización de la 1º Issue y comienzo del desarollo de las siguientes
 
 ## Construcción y ejecución
 
