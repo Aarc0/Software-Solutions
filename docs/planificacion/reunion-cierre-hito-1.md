@@ -17,17 +17,23 @@
 
 ### Revisión
 
-- [ ] Repasar el alcance previsto para el hito.
-- [ ] Confirmar las funcionalidades terminadas.
-    - Arreglar el login. Maybe añadir encoder
-- [ ] Anotar tareas incompletas o incidencias conocidas.
-- [ ] Revisar documentación y cambios pendientes de integrar.
+- [X] Repasar el alcance previsto para el hito.
+- [X] Confirmar las funcionalidades terminadas.
+- [X] Anotar tareas incompletas o incidencias conocidas.
+- [X] Revisar documentación y cambios pendientes de integrar.
 
 **Estado del hito:** _Pendiente de revisar en la reunión._
 
-**Pendientes / observaciones:**
+- Funcionalidad **Publicar un inmueble** terminada
+- Implementado además **Home.html, Loging.html** y mapea de las rutas
 
-> Añadir aquí los acuerdos y elementos que queden abiertos.
+**Pendientes / observaciones:**
+- Documentacion Hito 1
+- Reorganización de las ramas
+
+
+- Confrontación con 1 integrante del equipo respecto a su desempeño en el 1º Hito. **Realizado**
+
 
 ## 2. Testing de la funcionalidad de publicar inmueble
 
