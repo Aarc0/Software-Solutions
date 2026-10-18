@@ -1,10 +1,16 @@
 package es.uclm.rental_platform.controller;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
 
 import es.uclm.rental_platform.domain.Property;
 import es.uclm.rental_platform.service.PropertyService;
@@ -31,8 +37,9 @@ public class PropertyController {
 
     @PostMapping("/publish") //Cuando se de a publicar inmueble se haga el post. Usar service para enviar datos a dom
     // Authentication contiene la identidad de la sesión; getName() devuelve el email autenticado.
-    public String publishProperty(Property property){
-        this.propertyService.crear(property);
+    public String publishProperty(@ModelAttribute Property property, // Añadidas las etiquetas para poder solicitar bien las fotos
+        @RequestParam(name = "fotos", required = false) List<MultipartFile> fotos){
+        this.propertyService.crear(property, fotos);
         logger.info("POST /publish recibido correctamente");
         return "redirect:/"; //Redirige al home.html
     }

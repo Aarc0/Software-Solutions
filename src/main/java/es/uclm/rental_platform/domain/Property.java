@@ -35,7 +35,9 @@ public class Property {
     
     @OneToMany(mappedBy = "property")
     private List<Booking> bookings = new ArrayList<>();
-    
+
+    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Photos> photos = new ArrayList<>();
 
     @Column(nullable = false, unique = true)
     private String address;
@@ -133,6 +135,10 @@ public class Property {
 
     public List<Booking> getBookings(){
       return bookings;
+    }
+
+    public List<Photos> getPhotos() {
+      return photos;
     }
 
     public String getAddress(){
@@ -237,6 +243,10 @@ public class Property {
 
     public void setBookings(List<Booking> bookings) {
       this.bookings = bookings;
+    }
+
+    public void setPhotos(List<Photos> photos) {
+      this.photos = photos;
     }
 
     public void setAddress(String address) {
