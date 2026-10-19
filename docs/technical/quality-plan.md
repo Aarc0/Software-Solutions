@@ -9,7 +9,7 @@ Esta versión inicial se prepara antes de la entrega intermedia con carácter fo
 - **Equipo / empresa:**  Software & Solutions
 - **Fecha:** 18/10/2026
 - **Versión del documento:** 0.2
-- **Responsable de mantener el plan:** Andrés Alejandro Rojas Cardona
+- **Responsable de mantener el plan:** Mario Sierra Iniesta
 - **Sprint actual del equipo:** 2
 
 ---
