@@ -5,9 +5,7 @@ En este archivo se registrará cada una de las decisiones que hayamos tomado com
 Además de las decisiones también es buena idea que el archivo sirva para reflejar si una decisión fue acertada o incorrecta según a donde nos haya llevado.
 
 # Decisiones pendientes
-- Modificación BBDD para que no se borren los datos (consultar equipo)
-- Añadir a .gitignore la clase DataInitializer.java
-- Darle acceso a Ana al github (pasarle token)
+- Comentar la clase DataInitializer.java
 
 
 # Decisiones

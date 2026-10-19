@@ -13,3 +13,6 @@
 
 ### Creada una plantilla acerca de la reunion del cierre del Hito-1
  - Se ha usado al agente para la creacion de una plantilla en un **.md** que deje reflejado de alguna manera el estado en el que se cerro la última reunion del equipo previa a la Entrega Intermedia
+
+### Se ha pedido ayuda para que implemente un método para recoger las fotos del frontend
+- Se ha usado el agente para terminar de recoger las fotos del form y solucionar problemas, creados la sobrecarga del constructor `crear()` y los métodos `imageExtension()` y `deleteUploadedFiles()`.
