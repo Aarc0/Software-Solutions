@@ -1,4 +1,4 @@
-# Formulary
+<img width="967" height="211" alt="imagen" src="https://github.com/user-attachments/assets/99976fa5-ca99-4a7b-915a-9130d12c8a6d" /># Formulary
 
 <img width="1165" height="328" alt="imagen" src="https://github.com/user-attachments/assets/c41dae04-a963-40c9-bf40-1222a98a4f80" /><img width="1196" height="311" alt="imagen" src="https://github.com/user-attachments/assets/3c1c3689-4acf-4a21-9097-120c104ac227" />
 Se ha creado el front end para publicar un inmueble, a este html se accede mediante la clase HomeController que asigna el archivo al /publish de la página.
@@ -146,6 +146,7 @@ Las clases posicionan los eslóganes unos sobre otros, los centran y configuran 
 Cuando un eslogan tiene `data-state="active"`, se mueve a su posición, aparece y pierde el desenfoque. El estado `prev` lo desplaza hacia arriba. En pantallas pequeñas, `sm:*:text-3xl` aumenta el tamaño de los eslóganes. `motion-reduce:*:transition-none` desactiva las transiciones si el usuario prefiere reducir el movimiento.
 
 ## 7. Carruseles 
+<img width="1334" height="191" alt="imagen" src="https://github.com/user-attachments/assets/4374f2b4-4360-4801-b523-eb4ab37546ca" />
 
 - ### 7.1 `<section>`
 
@@ -185,6 +186,8 @@ El `<span>` muestra un emoji dentro de un círculo ámbar. `aria-hidden="true"` 
 El `<h3>` muestra el título de la tarjeta con la fuente decorativa y texto oscuro. El `<p>` presenta debajo una descripción en gris; `mt-2` añade un pequeño margen superior.
 
 ## 9. Reseñas 
+
+<img width="1380" height="422" alt="imagen" src="https://github.com/user-attachments/assets/c04a5170-4110-4640-9610-8e2108f4f096" />
 
 - ### 9.1 `<section>`
 
@@ -521,6 +524,8 @@ El atributo `viewBox="0 0 24 24"` define el área de dibujo del SVG. `aria-hidde
 `update();` ejecuta la función una vez al cargar este código para aplicar los estilos que correspondan a la posición inicial de la página.
 
 ## 16. Reveal JavaScript
+
+<img width="967" height="211" alt="imagen" src="https://github.com/user-attachments/assets/73aecec4-66a1-4e00-bba2-3b474b924480" />
 
 - ### 16.1 Clases para la aparición
 
