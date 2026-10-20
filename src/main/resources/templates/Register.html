@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar un inmueble</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class ="bg-gray-100">
+    <main class="mx-auto grid max-w-3xl gap-30 px-34 pt-40 pb-16">
+
+    <!-- Formulario -->
+    <!-- action="/publish y method="post" para enviar el formulario al controller, que esta esperando el post-->
+    <form action="/Register" method="post" 
+       class="h-150 rounded-2xl bg-white p-8 shadow-lg">
+       
+      <div class="flex h-full flex-col gap-8">
+        <h1 class="mb-6 text-2xl font-bold ">Registrate</h1>
+        <div>
+          <label for="usuarioemail" class="mb-1 block text-sm font-medium text-gray-700">Usuario</label>
+          <input id="usuarioemail" name="usuarioemail" type="text"   class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
+        <div>
+          <label for="email" class="mb-1 block text-sm font-medium text-gray-700">email</label>
+          <input id="email" name="email" type="text"   class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+        </div>
+      <div>
+        <label for="contrasena" class="mb-1 block text-sm font-medium text-gray-700">Contraseña</label>
+          <input id="contrasena" name="contrasena" type="text" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+      </div>
+      <div>
+        <label for="contrasena" class="mb-1 block text-sm font-medium text-gray-700">Repetir contraseña</label>
+          <input id="contrasena" name="contrasena" type="text" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+      </div>
+      
+     <button type="submit"
+        class="w-full rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700">
+        Registrate
+            </button>
+        <p class="mt-6 text-center text-gray-500">
+             ¿Ya tiene cuenta?
+        <a href="/login" class="text-blue-600 hover:underline">Inicie sesión</a>
+        </p>
+    </div>
+    </form>
+</body>

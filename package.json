@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "name": "software-solutions",
+  "description": "Proyecto desarrollado para el laboratorio de Ingeniería del Software II (curso 2026-2027)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aarc0/Software-Solutions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aarc0/Software-Solutions/issues"
+  },
+  "homepage": "https://github.com/Aarc0/Software-Solutions#readme"
+}
