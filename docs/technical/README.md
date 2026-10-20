@@ -8,7 +8,13 @@ En este archivo se explicará lo que se hace tanto con Maven como con Spring Boo
 
 - ./mvnw verify -> BUILD SUCCESS
 - ./mvnw spring-boot:run
-  - http://localhost:8080 responde
+- http://localhost:8080 responde
+
+# Rutas disponibles
+- [http://localhost:8080/login](http://localhost:8080/login)
+- [http://localhost:8080/Register](http://localhost:8080/Register)
+- [http://localhost:8080/publish](http://localhost:8080/publish)
+- [http://localhost:8080/](http://localhost:8080/)
 
 # Dependencias
 

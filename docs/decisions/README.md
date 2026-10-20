@@ -5,7 +5,6 @@ En este archivo se registrará cada una de las decisiones que hayamos tomado com
 Además de las decisiones también es buena idea que el archivo sirva para reflejar si una decisión fue acertada o incorrecta según a donde nos haya llevado.
 
 # Decisiones pendientes
-- Comentar la clase DataInitializer.java
 
 
 # Decisiones
@@ -26,3 +25,11 @@ Además de las decisiones también es buena idea que el archivo sirva para refle
 
  **Descripcion**
  Se ha decidido subir al repositorio una clase que inicializa una serie de datos de prueba en la base de datos, de esta manera todos los integrantes tienen la misma información por defecto. De esta manera se pueden testear ciertas funcionalidades. La documentación de la clase `DataInitializer` se encuentra en [`docs/technical/domain.md`](docs/technical/domain.md).
+
+ ## Persistencia en la base de datos
+ **Estado** Aceptada
+ **Fecha** 19/10/2026
+ 
+ **Descripción**
+ Se ha decidido cambiar la configuración del archivo application.properties ubicado en la carpeta resources para hacer que la base de datos guarde las entidades creadas, eliminando así la necesidad de tener que estar creando datos de prueba cada vez que se inicializaba la aplicación.
+ Con esto ya cada vez que se apague y se encienda la aplicación los datos seguirán guardados en la carpeta [`Software-Solutions/data/DB_Persistance.mv.db`](Software-Solutions/data/DB_Persistance.mv.db).

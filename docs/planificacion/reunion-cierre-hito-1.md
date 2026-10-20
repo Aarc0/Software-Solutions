@@ -30,8 +30,6 @@
 **Pendientes / observaciones:**
 - Documentacion Hito 1
 - Reorganización de las ramas
-
-
 - Confrontación con 1 integrante del equipo respecto a su desempeño en el 1º Hito. **Realizado**
 
 
