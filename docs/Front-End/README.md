@@ -1,6 +1,6 @@
-<img width="967" height="211" alt="imagen" src="https://github.com/user-attachments/assets/99976fa5-ca99-4a7b-915a-9130d12c8a6d" /># Formulary
 
-<img width="1165" height="328" alt="imagen" src="https://github.com/user-attachments/assets/c41dae04-a963-40c9-bf40-1222a98a4f80" /><img width="1196" height="311" alt="imagen" src="https://github.com/user-attachments/assets/3c1c3689-4acf-4a21-9097-120c104ac227" />
+# Formulary
+
 Se ha creado el front end para publicar un inmueble, a este html se accede mediante la clase HomeController que asigna el archivo al /publish de la página.
 Se utilizo tailwindcss y el código tiene varias partes, procedo a detallar que hace cada una:
 
