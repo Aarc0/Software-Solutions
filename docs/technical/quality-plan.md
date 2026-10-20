@@ -7,7 +7,7 @@ Esta versión inicial se prepara antes de la entrega intermedia con carácter fo
 ## 1. Identificación
 
 - **Equipo / empresa:**  Software & Solutions
-- **Fecha:** 18/10/2026
+- **Fecha:** 20/10/2026
 - **Versión del documento:** 0.2
 - **Responsable de mantener el plan:** Mario Sierra Iniesta
 - **Sprint actual del equipo:** 2
@@ -123,12 +123,7 @@ Criterios actuales:
 
 | Aspecto pendiente | Tipo | Acción prevista | Responsable | Estado |
 |---|---|---|---|---|
-| Lógica de negocio concentrada en Controller | Diseño | Revisar y mover lógica a Service |  | Pendiente |
-| Validaciones incompletas | Funcional | Revisar entradas del primer flujo |  | Pendiente |
-| Modelo y código desalineados | Documentación / diseño | Actualizar diagramas tras cambios |  | Pendiente |
-| `main` deja de construir tras una integración | Integración | Ejecutar `clean verify` antes y después del merge |  | Pendiente |
-| README desactualizado | Documentación | Revisar instrucciones antes de la entrega |  | Pendiente |
-| Información sensible en el repositorio | Configuración | Revisar `.gitignore` y cambios antes de commit |  | Pendiente |
+| README desactualizado | Documentación | Revisar instrucciones antes de la entrega | Andrés Alejandro Rojas Cardona | Realizado |
 
 > El equipo debe adaptar esta tabla a los problemas, limitaciones o dependencias reales de su proyecto. No es necesario conservar ejemplos que no apliquen.
 
@@ -140,8 +135,9 @@ Registrar únicamente deuda que el equipo conoce y ha decidido posponer de forma
 
 | Deuda técnica | Motivo por el que se pospone | Prioridad | Acción futura |
 |---|---|---|---|
-|  |  |  |  |
-|  |  |  |  |
+| Login de usuario que falla al intentar iniciar sesión | Nos hemos centrado en realizar la primera funcionalidad antes que en arreglar este fallo | media | Arreglar el SecurityConfig.java |
+| Importe incorrecto de tailwind | Frontend en ampliación y cuando se termine todo el frontend se descagarán las utilidades que se usen de tailwind | baja | Descargar utilidades del tailwind |
+
 
 Ejemplos posibles:
 
@@ -160,17 +156,17 @@ Ejemplos posibles:
 
 Antes de considerar una issue lista para integrarse, se comprobará:
 
-- [ ] tiene criterios de aceptación;
-- [ ] el cambio es trazable y está correctamente aislado cuando corresponde;
-- [ ] el código compila;
-- [ ] el proyecto ejecuta el build acordado;
-- [ ] existe una Pull Request cuando el cambio vaya a integrarse en `main`;
-- [ ] otra persona ha revisado el cambio;
-- [ ] el equipo comprende los cambios realizados;
-- [ ] la documentación afectada está actualizada;
-- [ ] el modelo está actualizado cuando corresponde;
-- [ ] el uso relevante de IA está declarado;
-- [ ] no se han incluido credenciales o datos sensibles.
+- [X] tiene criterios de aceptación;
+- [X] el cambio es trazable y está correctamente aislado cuando corresponde;
+- [X] el código compila;
+- [X] el proyecto ejecuta el build acordado;
+- [X] existe una Pull Request cuando el cambio vaya a integrarse en `main`;
+- [X] otra persona ha revisado el cambio;
+- [X] el equipo comprende los cambios realizados;
+- [X] la documentación afectada está actualizada;
+- [X] el modelo está actualizado cuando corresponde;
+- [X] el uso relevante de IA está declarado;
+- [X] no se han incluido credenciales o datos sensibles.
 
 ---
 
@@ -224,11 +220,16 @@ Este documento debe actualizarse cuando:
 
 ### Próxima revisión prevista
 
-- **Fecha / sesión:** 
-- **Responsable:** 
+- **Fecha / sesión:** 06/11/26
+- **Responsable:** Andrés Alejandro Rojas Cardona
 
 ---
 
 ## 10. Resumen
 
 > En 3–5 líneas, indicar cuáles son ahora mismo los principales objetivos de calidad del equipo, qué problema o limitación considera más importante y cuál es la acción prioritaria antes de la entrega intermedia.
+
+El equipo prioriza la fiabilidad de los flujos principales, la separación por capas y la trazabilidad de los cambios.
+La limitación más importante identificada es el fallo al iniciar sesión.
+Antes de la entrega intermedia, lo más importante es hacer el merge hacia la rama main.
+Después, se comprobará que la aplicación compila y que el inicio de sesión funciona correctamente.
