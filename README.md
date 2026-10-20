@@ -25,6 +25,8 @@ Desarrollar una plataforma para la gestión de alquiler de viviendas siguiendo u
 ## Estado
 
 Sprint 0 - Preparación y planificación
+Sprint 1 - Desarrollo de las primeras parte de la 1º Issue
+Sprint 2 - Finalización de la 1º Issue y comienzo del desarollo de las siguientes
 
 ## Construcción y ejecución
 
@@ -49,3 +51,6 @@ La documentación viva del proyecto se mantiene en:
 - `docs/technical/`: base técnica y dependencias.
 - `docs/diagrams/`: diagramas y modelos.
 - `docs/decisions/`: decisiones relevantes.
+- `docs/ai/`: Uso de la IA
+- `docs/Front-End`: Explicación del desarrollo del frontend
+- `docs/planificacion`: Documentación de la reunión de los hitos

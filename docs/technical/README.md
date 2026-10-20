@@ -8,7 +8,13 @@ En este archivo se explicará lo que se hace tanto con Maven como con Spring Boo
 
 - ./mvnw verify -> BUILD SUCCESS
 - ./mvnw spring-boot:run
-  - http://localhost:8080 responde
+- http://localhost:8080 responde
+
+# Rutas disponibles
+- [http://localhost:8080/login](http://localhost:8080/login)
+- [http://localhost:8080/Register](http://localhost:8080/Register)
+- [http://localhost:8080/publish](http://localhost:8080/publish)
+- [http://localhost:8080/](http://localhost:8080/)
 
 # Dependencias
 
@@ -16,6 +22,12 @@ En este archivo se explicará lo que se hace tanto con Maven como con Spring Boo
 - spring-boot-starter-thymeleaf → vistas HTML mediante plantillas Thymeleaf.
 - spring-boot-starter-webmvc-test → soporte para pruebas de Spring MVC.
 - spring-boot-starter-thymeleaf-test → soporte para pruebas de Thymeleaf
+- spring-boot-starter-data-jpa → Permite acceder y gestionar bases de datos usando JPA
+- spring-boot-starter-security → Añade mecanismos de autenticación y seguridad para proteger la aplicación
+- spring-boot-devtools → Permite agilizar el proceso de desarrollo volviendo a lanzar el servidor cuando se produce una modificación de los archivos
+- spring-boot-h2console → Permite el acceso a la consola web H2 que permite la consulta y administración de la base de datos
+- h2 → Es la base datos relacionadl usada en el proyecto
+
 
 # Ejecución
 

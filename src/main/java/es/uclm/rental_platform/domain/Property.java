@@ -35,7 +35,9 @@ public class Property {
     
     @OneToMany(mappedBy = "property")
     private List<Booking> bookings = new ArrayList<>();
-    
+
+    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Photos> photos = new ArrayList<>();
 
     @Column(nullable = false, unique = true)
     private String address;
@@ -68,6 +70,45 @@ public class Property {
     @Column(name = "description", nullable = true)
     private String description;
 
+    @Column(nullable = false)
+    private boolean elevator;
+
+    @Column(nullable = false)
+    private boolean garage;
+
+    @Column(nullable = false)
+    private boolean terrace;    
+
+    @Column(nullable = false)
+    private boolean pool;
+    
+    @Column(nullable = false)
+    private boolean airCon;    
+    
+    @Column(nullable = false)
+    private boolean heater;    
+    
+    @Column(nullable = false)
+    private boolean furniture;
+    
+    @Column(nullable = false)
+    private boolean wifi;
+    
+    @Column(nullable = false)
+    private boolean basicServices;
+    
+    @Column(nullable = false)
+    private boolean canSmoke;
+    
+    @Column(nullable = false)
+    private boolean onlyGirls;
+    
+    @Column(nullable = false)
+    private boolean onlyBoys;
+    
+    @Column(nullable = false)
+    private boolean petsAllowed;
+
     // Constructor getters y setters necesarios para la capa de aplicacion (service)
     protected Property() {
     }
@@ -94,6 +135,10 @@ public class Property {
 
     public List<Booking> getBookings(){
       return bookings;
+    }
+
+    public List<Photos> getPhotos() {
+      return photos;
     }
 
     public String getAddress(){
@@ -136,6 +181,58 @@ public class Property {
       return description;
     }
 
+    public boolean getElevator() {
+      return elevator;
+    }
+
+    public boolean getGarage() {
+      return garage;
+    }
+
+    public boolean getTerrace() {
+      return terrace;
+    }
+
+    public boolean getPool() {
+      return pool;
+    }
+
+    public boolean getAirCon() {
+      return airCon;
+    }
+
+    public boolean getHeater() {
+      return heater;
+    }
+
+    public boolean getFurniture() {
+      return furniture;
+    }
+
+    public boolean getWifi() {
+      return wifi;
+    }
+
+    public boolean getBasicServices() {
+      return basicServices;
+    }
+
+    public boolean getCanSmoke() {
+      return canSmoke;
+    }
+
+    public boolean getOnlyGirls() {
+      return onlyGirls;
+    }
+
+    public boolean getOnlyBoys() {
+      return onlyBoys;
+    }
+
+    public boolean getPetsAllowed() {
+      return petsAllowed;
+    }
+
     public void setOwner(Owner owner) {
       this.owner = owner;
     }
@@ -146,6 +243,10 @@ public class Property {
 
     public void setBookings(List<Booking> bookings) {
       this.bookings = bookings;
+    }
+
+    public void setPhotos(List<Photos> photos) {
+      this.photos = photos;
     }
 
     public void setAddress(String address) {
@@ -186,6 +287,58 @@ public class Property {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setElevator(boolean elevator) {
+        this.elevator = elevator;
+    }
+
+    public void setGarage(boolean garage) {
+        this.garage = garage;
+    }
+
+    public void setTerrace(boolean terrace) {
+        this.terrace = terrace;
+    }
+
+    public void setPool(boolean pool) {
+        this.pool = pool;
+    }
+
+    public void setAirCon(boolean airCon) {
+        this.airCon = airCon;
+    }
+
+    public void setHeater(boolean heater) {
+        this.heater = heater;
+    }
+
+    public void setFurniture(boolean furniture) {
+        this.furniture = furniture;
+    }
+
+    public void setWifi(boolean wifi) {
+        this.wifi = wifi;
+    }
+
+    public void setBasicServices(boolean basicServices) {
+        this.basicServices = basicServices;
+    }
+
+    public void setCanSmoke(boolean canSmoke) {
+        this.canSmoke = canSmoke;
+    }
+
+    public void setOnlyGirls(boolean onlyGirls) {
+        this.onlyGirls = onlyGirls;
+    }
+
+    public void setOnlyBoys(boolean onlyBoys) {
+        this.onlyBoys = onlyBoys;
+    }
+
+    public void setPetsAllowed(boolean petsAllowed) {
+        this.petsAllowed = petsAllowed;
     }
 
 }
