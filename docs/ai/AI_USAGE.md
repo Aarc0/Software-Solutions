@@ -29,3 +29,8 @@ Este documento recoge los usos relevantes de inteligencia artificial realizados 
 
 ### Se ha pedido ayuda para que implemente un método para recoger las fotos del frontend
 - Se ha usado el agente para terminar de recoger las fotos del form y solucionar problemas, creados la sobrecarga del constructor `crear()` y los métodos `imageExtension()` y `deleteUploadedFiles()`.
+
+### Se ha pedido a la ia que cree todo el front end del home,
+- Se le pasó un esquema de código de como se quería la página con un carrusel en medio y se le pasos la issue #33. 
+  Se decidió implementar ia en este proceso debido a que no es una funcionalidad muy importante y si está bien definida la issue no hay problemas a la hora de que la ia la haga. La documentación de lo que
+  hace el código de ia está en la carpeta de Front-end en el apartado Home.
