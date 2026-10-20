@@ -9,7 +9,7 @@ Este documento recoge los usos relevantes de inteligencia artificial realizados 
 - Las propuestas deben verificarse mediante las herramientas correspondientes.
 - No se integrará código generado por IA sin revisión humana.
 
-## Hit 1 - Desarrollo funcional
+## Hito 1 - Desarrollo funcional
 
 ### Cambio en los nombres del campo del formulario
  - Le he pedido al agente de IA que cambia el campo de **"name"** y **"id"** del acrhivo Formulary.html para que coincidan con el nombre de los atributos de la clase Property.java del directorio **domain/**
