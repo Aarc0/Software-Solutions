@@ -49,6 +49,19 @@ El input hidden ayuda a proteger el formulario frente a peticiones externas medi
 
 Imágen que se encuentra en la columna derecha 
 
+# Home 
+Es lo que el usuario primero ve cuando ingresa en nuestra página. El home fue creado casi en su totalidad por ia, el promt se hizo de la siguiente manera:
+Se le pasó a la ia un esquema de la página con el carrusel sin todavía fotos dentro y se le paso  la issue  #33.
+Ahora voy a proceder a explicar que hace el home:
+
+## 1. Header 
+<img width="1400" height="287" alt="imagen" src="https://github.com/user-attachments/assets/1207c13b-d6ed-4d45-88d6-c34b3b248b08" />
+Se importa la api de google para usar sus fuentes de texto, se importa tailwind. 
+El noscript quita la pantalla de carga si javascript está desactivado para que así no tape la página.
+## 2. Theme
+<img width="905" height="344" alt="imagen" src="https://github.com/user-attachments/assets/c42eadd5-d4db-40ed-9d49-8b581bde9cd3" />
+Define animaciones y variables para tailwindcss: Las fuentes, los animates son las reglas de animación del carrusel y por útlimo los @keyframe
+
 
 
 
