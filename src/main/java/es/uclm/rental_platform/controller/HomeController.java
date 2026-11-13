@@ -22,4 +22,10 @@ public class HomeController {
     public String Formulary(){
         return "Formulary";
     }
+
+    @GetMapping("/List")
+    public String List(){
+        return "List";
+    }
+    
 }
