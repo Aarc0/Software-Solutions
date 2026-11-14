@@ -1,10 +1,22 @@
 package es.uclm.rental_platform.controller;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import es.uclm.rental_platform.service.PropertyService;
+
 
 @Controller 
 public class HomeController {
     
+    private final PropertyService propertyService;
+
+
+    public HomeController(PropertyService propertyService) {
+        this.propertyService = propertyService;
+    }
+
+
     @GetMapping("/")
     public String home(){
         return "home";
@@ -24,7 +36,8 @@ public class HomeController {
     }
 
     @GetMapping("/List")
-    public String List(){
+    public String List(Model model){
+        model.addAttribute("properties", propertyService.list());
         return "List";
     }
     
