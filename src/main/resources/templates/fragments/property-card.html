@@ -1,5 +1,6 @@
-<article th:fragment="card(property)"
-         class="group overflow-hidden rounded-2xl bg-white/80 shadow-md ring-1 ring-amber-900/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+<a th:fragment="card(property)"
+   th:href="@{/property/{id}(id=${property.id})}"
+   class="group block overflow-hidden rounded-2xl bg-white/80 shadow-md ring-1 ring-amber-900/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-700">
   <div class="relative h-56 overflow-hidden bg-amber-200">
     <img th:if="${property.photos != null and !#lists.isEmpty(property.photos)}"
          th:src="${property.photos[0].imageUrl}"
@@ -38,4 +39,4 @@
       </p>
     </div>
   </div>
-</article>
+</a>
