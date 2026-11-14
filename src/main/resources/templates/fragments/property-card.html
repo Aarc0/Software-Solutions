@@ -1,0 +1,41 @@
+<article th:fragment="card(property)"
+         class="group overflow-hidden rounded-2xl bg-white/80 shadow-md ring-1 ring-amber-900/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+  <div class="relative h-56 overflow-hidden bg-amber-200">
+    <img th:if="${property.photos != null and !#lists.isEmpty(property.photos)}"
+         th:src="${property.photos[0].imageUrl}"
+         th:alt="|Alojamiento en ${property.address}|"
+         class="size-full object-cover transition duration-500 group-hover:scale-105"
+         loading="lazy">
+    <div th:unless="${property.photos != null and !#lists.isEmpty(property.photos)}"
+         class="grid size-full place-items-center bg-linear-to-br from-amber-100 to-orange-200 text-orange-700"
+         role="img" aria-label="Este alojamiento no tiene fotos">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="size-16 fill-none stroke-current stroke-[1.2]">
+        <path d="M3 11 12 3l9 8M5 10v10h14V10M10 20v-6h4v6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="p-5">
+    <p class="text-sm font-medium text-orange-700" th:text="${property.type}">Tipo de inmueble</p>
+    <h3 class="mt-1 font-display text-xl font-semibold text-stone-900" th:text="${property.address}">Dirección</h3>
+
+    <p th:if="${property.description != null and !#strings.isEmpty(property.description)}"
+       class="mt-2 line-clamp-2 text-sm leading-relaxed text-stone-600"
+       th:text="${property.description}">
+      Descripción del alojamiento
+    </p>
+
+    <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-b border-stone-200 pb-4 text-xs text-stone-600">
+      <span th:text="|⌂ ${property.surface} m²|">Superficie</span>
+      <span th:if="${property.rooms != null}" th:text="|▦ ${property.rooms} habitaciones|">Habitaciones</span>
+      <span th:if="${property.maxTravelers != null}" th:text="|♙ ${property.maxTravelers} huéspedes|">Capacidad</span>
+    </div>
+
+    <div class="flex items-baseline justify-between pt-4">
+      <p>
+        <strong class="font-display text-2xl text-stone-900" th:text="|${property.nightPrice} €|">Precio</strong>
+        <span class="text-sm text-stone-500"> / noche</span>
+      </p>
+    </div>
+  </div>
+</article>
