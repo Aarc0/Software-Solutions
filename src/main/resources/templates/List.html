@@ -35,128 +35,22 @@
     <section aria-labelledby="listado-title">
       <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p class="text-sm font-medium text-orange-700">Una selección para ti</p>
-          <h2 id="listado-title" class="mt-1 font-display text-2xl font-semibold text-stone-900 sm:text-3xl">Alojamientos destacados</h2>
+          <p class="text-sm font-medium text-orange-700">Encuentra tu próximo alojamiento</p>
+          <h2 id="listado-title" class="mt-1 font-display text-2xl font-semibold text-stone-900 sm:text-3xl">Alojamientos disponibles</h2>
         </div>
-        <p class="text-sm text-stone-600">Una primera vista de nuestros espacios</p>
+        <p class="text-sm text-stone-600" th:text="|${#lists.size(properties)} alojamientos|">Alojamientos</p>
       </div>
 
-      <!-- Tarjetas de ejemplo para la propuesta visual del listado. -->
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <article class="group overflow-hidden rounded-2xl bg-white/80 shadow-md ring-1 ring-amber-900/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative h-56 overflow-hidden bg-amber-200">
-            <img src="/Carrusel1.jpg" alt="Exterior de un alojamiento con encanto" class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
-            <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold tracking-wide text-orange-800">DESTACADO</span>
-            <span aria-hidden="true" class="absolute right-4 top-4 grid size-10 place-items-center rounded-full bg-white/90 text-lg text-orange-700">♡</span>
-          </div>
-          <div class="p-5">
-            <p class="text-sm font-medium text-orange-700">Toledo · Centro histórico</p>
-            <h3 class="mt-1 font-display text-xl font-semibold text-stone-900">Casa luminosa con encanto</h3>
-            <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-stone-600">Un espacio acogedor para disfrutar de una estancia tranquila y descubrir la ciudad.</p>
-            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-b border-stone-200 pb-4 text-xs text-stone-600">
-              <span>⌂ 78 m²</span><span>▦ 2 habitaciones</span><span>♙ 4 huéspedes</span>
-            </div>
-            <div class="flex items-baseline justify-between pt-4">
-              <p><strong class="font-display text-2xl text-stone-900">85 €</strong><span class="text-sm text-stone-500"> / noche</span></p>
-              <a href="/login" class="rounded-full bg-orange-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-orange-700">Ver alojamiento</a>
-            </div>
-          </div>
-        </article>
+      <div th:if="${#lists.isEmpty(properties)}" class="rounded-2xl bg-white/75 px-6 py-12 text-center shadow-sm ring-1 ring-amber-900/10">
+        <span aria-hidden="true" class="text-4xl">⌂</span>
+        <h3 class="mt-4 font-display text-2xl font-semibold text-stone-900">Todavía no hay alojamientos</h3>
+        <p class="mt-2 text-stone-600">Vuelve más adelante para descubrir nuevos espacios.</p>
+      </div>
 
-        <article class="group overflow-hidden rounded-2xl bg-white/80 shadow-md ring-1 ring-amber-900/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative h-56 overflow-hidden bg-amber-200">
-            <img src="/Carrusel2.jpeg" alt="Interior cálido de un alojamiento" class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
-            <span class="absolute right-4 top-4 grid size-10 place-items-center rounded-full bg-white/90 text-lg text-orange-700">♡</span>
-          </div>
-          <div class="p-5">
-            <p class="text-sm font-medium text-orange-700">Cuenca · Casco antiguo</p>
-            <h3 class="mt-1 font-display text-xl font-semibold text-stone-900">Apartamento entre historia</h3>
-            <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-stone-600">Luz natural, detalles cuidados y todo lo necesario para sentirte como en casa.</p>
-            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-b border-stone-200 pb-4 text-xs text-stone-600">
-              <span>⌂ 62 m²</span><span>▦ 1 habitación</span><span>♙ 2 huéspedes</span>
-            </div>
-            <div class="flex items-baseline justify-between pt-4">
-              <p><strong class="font-display text-2xl text-stone-900">72 €</strong><span class="text-sm text-stone-500"> / noche</span></p>
-              <a href="/login" class="rounded-full bg-orange-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-orange-700">Ver alojamiento</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="group overflow-hidden rounded-2xl bg-white/80 shadow-md ring-1 ring-amber-900/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative h-56 overflow-hidden bg-amber-200">
-            <img src="/Carrusel3.jpeg" alt="Alojamiento amplio y luminoso" class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
-            <span class="absolute right-4 top-4 grid size-10 place-items-center rounded-full bg-white/90 text-lg text-orange-700">♡</span>
-          </div>
-          <div class="p-5">
-            <p class="text-sm font-medium text-orange-700">Albacete · Zona tranquila</p>
-            <h3 class="mt-1 font-display text-xl font-semibold text-stone-900">Refugio para desconectar</h3>
-            <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-stone-600">Un rincón sereno y confortable para compartir unos días especiales.</p>
-            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-b border-stone-200 pb-4 text-xs text-stone-600">
-              <span>⌂ 95 m²</span><span>▦ 3 habitaciones</span><span>♙ 5 huéspedes</span>
-            </div>
-            <div class="flex items-baseline justify-between pt-4">
-              <p><strong class="font-display text-2xl text-stone-900">110 €</strong><span class="text-sm text-stone-500"> / noche</span></p>
-              <a href="/login" class="rounded-full bg-orange-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-orange-700">Ver alojamiento</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="group overflow-hidden rounded-2xl bg-white/80 shadow-md ring-1 ring-amber-900/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative h-56 overflow-hidden bg-amber-200">
-            <img src="/Carrusel4.jpeg" alt="Detalle de una estancia acogedora" class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
-            <span class="absolute right-4 top-4 grid size-10 place-items-center rounded-full bg-white/90 text-lg text-orange-700">♡</span>
-          </div>
-          <div class="p-5">
-            <p class="text-sm font-medium text-orange-700">Ciudad Real · Junto al parque</p>
-            <h3 class="mt-1 font-display text-xl font-semibold text-stone-900">Estancia con luz y calma</h3>
-            <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-stone-600">Ambientes cálidos y una ubicación ideal para explorar a tu ritmo.</p>
-            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-b border-stone-200 pb-4 text-xs text-stone-600">
-              <span>⌂ 54 m²</span><span>▦ 1 habitación</span><span>♙ 2 huéspedes</span>
-            </div>
-            <div class="flex items-baseline justify-between pt-4">
-              <p><strong class="font-display text-2xl text-stone-900">68 €</strong><span class="text-sm text-stone-500"> / noche</span></p>
-              <a href="/login" class="rounded-full bg-orange-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-orange-700">Ver alojamiento</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="group overflow-hidden rounded-2xl bg-white/80 shadow-md ring-1 ring-amber-900/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative h-56 overflow-hidden bg-amber-200">
-            <img src="/Carrusel5.jpeg" alt="Alojamiento preparado para una estancia" class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
-            <span class="absolute right-4 top-4 grid size-10 place-items-center rounded-full bg-white/90 text-lg text-orange-700">♡</span>
-          </div>
-          <div class="p-5">
-            <p class="text-sm font-medium text-orange-700">Talavera · Cerca del centro</p>
-            <h3 class="mt-1 font-display text-xl font-semibold text-stone-900">Tu pequeño hogar viajero</h3>
-            <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-stone-600">Una estancia práctica y acogedora para escapadas y viajes de trabajo.</p>
-            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-b border-stone-200 pb-4 text-xs text-stone-600">
-              <span>⌂ 48 m²</span><span>▦ 1 habitación</span><span>♙ 3 huéspedes</span>
-            </div>
-            <div class="flex items-baseline justify-between pt-4">
-              <p><strong class="font-display text-2xl text-stone-900">64 €</strong><span class="text-sm text-stone-500"> / noche</span></p>
-              <a href="/login" class="rounded-full bg-orange-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-orange-700">Ver alojamiento</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="group overflow-hidden rounded-2xl bg-white/80 shadow-md ring-1 ring-amber-900/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative h-56 overflow-hidden bg-amber-200">
-            <img src="/Carrusel6.jpeg" alt="Espacio agradable para descansar" class="size-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
-            <span class="absolute right-4 top-4 grid size-10 place-items-center rounded-full bg-white/90 text-lg text-orange-700">♡</span>
-          </div>
-          <div class="p-5">
-            <p class="text-sm font-medium text-orange-700">Guadalajara · Barrio residencial</p>
-            <h3 class="mt-1 font-display text-xl font-semibold text-stone-900">Un espacio para compartir</h3>
-            <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-stone-600">Comodidad y espacio para disfrutar de una escapada con los tuyos.</p>
-            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-b border-stone-200 pb-4 text-xs text-stone-600">
-              <span>⌂ 88 m²</span><span>▦ 2 habitaciones</span><span>♙ 4 huéspedes</span>
-            </div>
-            <div class="flex items-baseline justify-between pt-4">
-              <p><strong class="font-display text-2xl text-stone-900">92 €</strong><span class="text-sm text-stone-500"> / noche</span></p>
-              <a href="/login" class="rounded-full bg-orange-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-orange-700">Ver alojamiento</a>
-            </div>
-          </div>
-        </article>
+      <div th:unless="${#lists.isEmpty(properties)}" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <th:block th:each="property : ${properties}">
+          <article th:replace="~{fragments/property-card :: card(${property})}"></article>
+        </th:block>
       </div>
     </section>
   </main>
