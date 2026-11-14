@@ -1,13 +1,23 @@
 # Listado de alojamientos
 
-Se ha creado una primera propuesta visual para el listado de inmuebles en `List.html`. La página mantiene la línea estética de Nano Inmobiliaria: tonos cálidos, tipografías DM Sans y Playfair Display, fondos suaves y tarjetas con bordes redondeados.
+La página `List.html` muestra los alojamientos que recibe con el atributo `properties`. Mantiene la línea estética de Nano Inmobiliaria: tonos cálidos, tipografías DM Sans y Playfair Display, fondos suaves y tarjetas adaptables a distintos tamaños de pantalla.
 
-El contenido se organiza en una cabecera y una cuadrícula adaptable de tarjetas. Cada tarjeta muestra una imagen, una breve descripción y datos representativos del alojamiento, como ubicación, superficie, habitaciones, capacidad y precio. Las imágenes reutilizan recursos del carrusel de la página principal.
+Las tarjetas se definen en el fragmento `templates/fragments/property-card.html` y se repiten para cada alojamiento. Muestran los datos disponibles en `Property`, como dirección, tipo, precio por noche, superficie, descripción, habitaciones, capacidad y foto. Si un alojamiento no tiene foto se muestra un marcador visual, y si no hay alojamientos se presenta un mensaje de lista vacía.
 
-Desde el botón **«Explorar alojamientos»** del home se puede navegar a `/List`. La ruta de la vista ya estaba definida en `HomeController`.
+Desde el botón **«Explorar alojamientos»** del home se puede navegar a `/List`. El controlador pasa a la vista la lista obtenida mediante el servicio.
 
-Esta versión es únicamente una maqueta visual: los datos y enlaces de las tarjetas son ejemplos estáticos y todavía no se cargan desde la base de datos.
+## Cambios realizados en el código
 
-## Prompt utilizado
+- En `templates/List.html`, sustituí las tarjetas estáticas de ejemplo por la cuadrícula Thymeleaf que recorre `properties`. También añadí el contador de alojamientos y el mensaje para cuando la lista está vacía.
+- Creé `templates/fragments/property-card.html` para definir cada tarjeta. El fragmento muestra los campos disponibles del inmueble, su primera foto cuando existe y un marcador visual cuando no tiene fotos.
+- En `templates/home.html`, añadí el botón **«Explorar alojamientos»**, que enlaza con `/List`.
+
+El mapeo `/List` y la carga de la lista mediante el servicio en el controlador son cambios configurados por el usuario; no fueron modificados aquí.
+
+## Prompt inicial de la vista
 
 > Se ha actualizado el nombre de Listado.html a List.html, además solo quiero actualmente la creacion de la parte visual, es decir solo crear una primera vision de como sería ese listado de los inmubles y que se pueda navegar a ese apartado desde el home, por ello solo rellena List.html siguiendo la linea estética de la página
+
+## Prompt para conectar las tarjetas a los alojamientos
+
+> puedes realizar tus esas modificaciones del html, ya he configurado service yc ontroller para permitirlo
