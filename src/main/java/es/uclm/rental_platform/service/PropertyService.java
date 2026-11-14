@@ -144,4 +144,8 @@ public class PropertyService
 
         return crear(consulta.get().getId(), address, type, nightPrice, surface);
     }
+
+    public List<Property> list(){
+        return property_repo.findAll();
+    }
 }
