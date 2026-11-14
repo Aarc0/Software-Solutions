@@ -1,13 +1,16 @@
 package es.uclm.rental_platform.controller;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -33,6 +36,17 @@ public class PropertyController {
 
         logger.info("GET /publish recibido correctamente");
         return "Formulary";
+    }
+
+    @GetMapping("/property/{id}")
+    public String propertyDetails(@PathVariable Long id, Model model){
+        Optional<Property> property = propertyService.findById(id);
+        if (property.isEmpty()) {
+            return "redirect:/List";
+        }
+
+        model.addAttribute("property", property.get());
+        return "PropertyDetail";
     }
 
     @PostMapping("/publish") //Cuando se de a publicar inmueble se haga el post. Usar service para enviar datos a dom
