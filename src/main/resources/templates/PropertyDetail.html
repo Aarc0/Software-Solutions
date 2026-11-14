@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del alojamiento · Nano Inmobiliaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.11"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: "Playfair Display", Georgia, serif;
+      --font-sans: "DM Sans", system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-fixed bg-linear-to-br from-amber-150 via-orange-200 to-stone-300 font-sans text-stone-800">
+  <nav aria-label="Navegación principal" class="sticky top-0 z-50 flex items-center justify-between gap-3 bg-white/75 px-4 py-3 shadow-sm backdrop-blur sm:px-8">
+    <a href="/List" class="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-stone-700 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-700 sm:px-4" aria-label="Volver al listado de alojamientos">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 fill-none stroke-current stroke-2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
+      <span>Volver al listado</span>
+    </a>
+    <a href="/" class="grid size-11 place-items-center rounded-full text-orange-700 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-700" aria-label="Ir al inicio">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="size-7 fill-none stroke-current stroke-2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8M5 10v10h14V10M10 20v-6h4v6"/></svg>
+    </a>
+  </nav>
+
+  <main class="relative z-10 mx-auto max-w-6xl px-4 py-8 sm:px-8 sm:py-12">
+    <header class="mb-7">
+      <p class="text-sm font-medium tracking-[.2em] text-orange-700 uppercase" th:text="${property.type}">Tipo de alojamiento</p>
+      <h1 class="mt-2 font-display text-3xl font-semibold text-stone-900 sm:text-5xl" th:text="${property.address}">Dirección del alojamiento</h1>
+    </header>
+
+    <section aria-label="Fotos del alojamiento" class="overflow-hidden rounded-3xl bg-white/75 p-2 shadow-lg ring-1 ring-amber-900/10 sm:p-3">
+      <div th:if="${property.photos != null and !#lists.isEmpty(property.photos)}" class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <img th:each="photo : ${property.photos}"
+             th:src="${photo.imageUrl}"
+             th:alt="|Foto del alojamiento en ${property.address}|"
+             class="h-64 w-full rounded-2xl object-cover sm:h-80">
+      </div>
+      <div th:unless="${property.photos != null and !#lists.isEmpty(property.photos)}"
+           class="grid h-64 place-items-center rounded-2xl bg-linear-to-br from-amber-100 to-orange-200 text-orange-700 sm:h-80"
+           role="img" aria-label="Este alojamiento no tiene fotos">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="size-20 fill-none stroke-current stroke-[1.2]">
+          <path d="M3 11 12 3l9 8M5 10v10h14V10M10 20v-6h4v6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_19rem]">
+      <div class="space-y-7">
+        <section class="rounded-2xl bg-white/75 p-6 shadow-sm ring-1 ring-amber-900/10 sm:p-8" aria-labelledby="details-title">
+          <h2 id="details-title" class="font-display text-2xl font-semibold text-stone-900">Sobre este alojamiento</h2>
+          <p class="mt-4 whitespace-pre-line leading-relaxed text-stone-700" th:if="${property.description != null and !#strings.isEmpty(property.description)}" th:text="${property.description}">Descripción del alojamiento</p>
+          <p class="mt-4 leading-relaxed text-stone-600" th:unless="${property.description != null and !#strings.isEmpty(property.description)}">El propietario todavía no ha añadido una descripción.</p>
+
+          <dl class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <div class="rounded-xl bg-amber-50 p-4">
+              <dt class="text-sm text-stone-500">Superficie</dt>
+              <dd class="mt-1 font-semibold text-stone-900" th:text="|${property.surface} m²|">Superficie</dd>
+            </div>
+            <div th:if="${property.rooms != null}" class="rounded-xl bg-amber-50 p-4">
+              <dt class="text-sm text-stone-500">Habitaciones</dt>
+              <dd class="mt-1 font-semibold text-stone-900" th:text="${property.rooms}">Habitaciones</dd>
+            </div>
+            <div th:if="${property.beds != null}" class="rounded-xl bg-amber-50 p-4">
+              <dt class="text-sm text-stone-500">Camas</dt>
+              <dd class="mt-1 font-semibold text-stone-900" th:text="${property.beds}">Camas</dd>
+            </div>
+            <div th:if="${property.baths != null}" class="rounded-xl bg-amber-50 p-4">
+              <dt class="text-sm text-stone-500">Baños</dt>
+              <dd class="mt-1 font-semibold text-stone-900" th:text="${property.baths}">Baños</dd>
+            </div>
+            <div th:if="${property.maxTravelers != null}" class="rounded-xl bg-amber-50 p-4">
+              <dt class="text-sm text-stone-500">Capacidad máxima</dt>
+              <dd class="mt-1 font-semibold text-stone-900" th:text="|${property.maxTravelers} huéspedes|">Capacidad</dd>
+            </div>
+            <div th:if="${property.bail != null}" class="rounded-xl bg-amber-50 p-4">
+              <dt class="text-sm text-stone-500">Fianza</dt>
+              <dd class="mt-1 font-semibold text-stone-900" th:text="|${property.bail} €|">Fianza</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="rounded-2xl bg-white/75 p-6 shadow-sm ring-1 ring-amber-900/10 sm:p-8" aria-labelledby="amenities-title">
+          <h2 id="amenities-title" class="font-display text-2xl font-semibold text-stone-900">Comodidades</h2>
+          <ul class="mt-5 grid grid-cols-1 gap-3 text-stone-700 sm:grid-cols-2">
+            <li th:if="${property.elevator}">Ascensor</li>
+            <li th:if="${property.garage}">Garaje</li>
+            <li th:if="${property.terrace}">Terraza</li>
+            <li th:if="${property.pool}">Piscina</li>
+            <li th:if="${property.airCon}">Aire acondicionado</li>
+            <li th:if="${property.heater}">Calefacción</li>
+            <li th:if="${property.furniture}">Amueblado</li>
+            <li th:if="${property.wifi}">Wifi</li>
+            <li th:if="${property.basicServices}">Servicios básicos</li>
+            <li th:if="${!property.elevator and !property.garage and !property.terrace and !property.pool and !property.airCon and !property.heater and !property.furniture and !property.wifi and !property.basicServices}" class="text-stone-500">No se han indicado comodidades.</li>
+          </ul>
+        </section>
+
+        <section class="rounded-2xl bg-white/75 p-6 shadow-sm ring-1 ring-amber-900/10 sm:p-8" aria-labelledby="rules-title">
+          <h2 id="rules-title" class="font-display text-2xl font-semibold text-stone-900">Normas del alojamiento</h2>
+          <ul class="mt-5 grid grid-cols-1 gap-3 text-stone-700 sm:grid-cols-2">
+            <li th:if="${property.canSmoke}">Se permite fumar</li>
+            <li th:if="${property.onlyGirls}">Solo chicas</li>
+            <li th:if="${property.onlyBoys}">Solo chicos</li>
+            <li th:if="${property.petsAllowed}">Se admiten mascotas</li>
+            <li th:if="${!property.canSmoke and !property.onlyGirls and !property.onlyBoys and !property.petsAllowed}" class="text-stone-500">No se han indicado normas adicionales.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="h-fit rounded-2xl bg-white/85 p-6 shadow-lg ring-1 ring-amber-900/10 lg:sticky lg:top-24">
+        <p class="text-sm text-stone-500">Precio por noche</p>
+        <p class="mt-1"><strong class="font-display text-3xl text-stone-900" th:text="|${property.nightPrice} €|">Precio</strong></p>
+        <button type="button" class="mt-6 w-full rounded-full bg-orange-600 px-6 py-3 font-bold text-white shadow-sm transition hover:bg-orange-700">
+          Reservar
+        </button>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="relative z-10 px-4 py-8 text-center text-sm text-stone-500">
+    © Nano Inmobiliaria · Todos los derechos reservados
+  </footer>
+</body>
+</html>
