@@ -148,4 +148,8 @@ public class PropertyService
     public List<Property> list(){
         return property_repo.findAll();
     }
+
+    public Optional<Property> findById(Long id){
+        return property_repo.findById(id);
+    }
 }
