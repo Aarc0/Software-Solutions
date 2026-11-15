@@ -108,8 +108,9 @@
 
 | ID caso | Clase / método JUnit | Tipo | Comportamiento protegido | Estado |
 |---|---|---|---|---|
-| CP-01 |  | Unitaria / Integración / Web |  | Implementada / Pendiente |
-| CP-02 |  | Unitaria / Integración / Web |  | Implementada / Pendiente |
+| CP-01 | PropertyPublishServiceTest.java | Unitaria | Se añade correctamente la propiedad aunque no se agreguen fotos | Implementada |
+| CP-02 | PropertyPublishServiceTest.java | Unitaria | Se añade correctamente la propiedad añadiendo fotos             | Implementada |
+| CP-03 | PropertyPublishServiceTest.java | Unitaria | No se añade la propiedad si el formato de imagen es incorrecto  | Implementada |
 
 ### Criterios de diseño
 
