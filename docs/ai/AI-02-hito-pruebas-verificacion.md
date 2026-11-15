@@ -10,13 +10,24 @@
 
 ## 1. Identificación
 
-- **Equipo / empresa:**  
+- **Equipo / empresa:**  Software & Solutions
 - **Integrantes:**  
+  - Andrés Alejandro Rojas Cardona
+  - Mario Sierra Iniesta
+  - Aitor Vadillo Sanchez
+  - Miguel Romo Serrano
+  - Pablo Calderón Bermejo
 - **Repositorio:**  
+  - > https://github.com/Aarc0/Software-Solutions
 - **Issue / requisito relacionado:**  
+  - #11 Publicar inmueble
+  - #50 Subissue relacionada con las pruebas
 - **Criterio o comportamiento protegido:**  
+  - Una imagen con formato no permitido se rechaza de forma controlada
 - **Responsable principal del Hito 2:**  
+  - Pablo Calderón Bermejo
 - **Participantes y contribución de cada uno:**  
+  - > POR ASIGNAR
 
 ---
 
@@ -24,16 +35,22 @@
 
 > Completar antes de pedir al agente una propuesta de prueba.
 
-- **Caso relacionado de `docs/testing/TEST_PLAN.md`, si procede:**  
+- **Caso relacionado de `docs/testing/TEST_PLAN.md`, si procede:** 
+  - CP-03 
 - **Entrada / situación:**  
+  - Imagen con formato erroneo
 - **Resultado esperado:**  
+  - Error controlado y lanzar un IllegalArgumentException, el inmueble no se guarda ni se escribe en ningún archivo
 - **Tipo de caso:** Válido / Inválido / Límite / Regresión  
+  - Inválido
 - **Qué defecto debería detectar una buena prueba:**  
+  - Que se guarde el inmueble aún subiendo un formato incorrecto
 - **Qué aserción o resultado observable debería comprobar:**  
+  - Que no se guarda y que a la carpeta de uploads no se añade nada
 
 ### Contexto proporcionado al agente
 
-- [ ] Repositorio abierto.
+- [ ] Repoitorio abierto.
 - [ ] `AGENTS.md` y skill de revisión de pruebas aplicable.
 - [ ] Issue / criterio de aceptación.
 - [ ] `docs/testing/TEST_PLAN.md`.
