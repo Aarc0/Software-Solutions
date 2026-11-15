@@ -34,3 +34,12 @@ Este documento recoge los usos relevantes de inteligencia artificial realizados 
 - Se le pasó un esquema de código de como se quería la página con un carrusel en medio y se le pasos la issue #33. 
   Se decidió implementar ia en este proceso debido a que no es una funcionalidad muy importante y si está bien definida la issue no hay problemas a la hora de que la ia la haga. La documentación de lo que
   hace el código de ia está en la carpeta de Front-end en el apartado Home.
+
+
+## Hito 2 - Pruebas y verificación
+
+### Uso de Mockito además de JUnit en las pruebas de PropertyService
+- Para probar la publicación de un inmueble (FP-01, casos CP-01 a CP-03 de `TEST_PLAN.md`) sin base de datos, el agente propuso crear dobles de `PropertyRepository` y `UserRepository` con Mockito, además de JUnit. Mockito ya viene incluido en `spring-boot-starter-test`, por lo que no se modificó el `pom.xml`.
+- **Prompt:** Se le pidió ayuda al agente para la realización de las pruebas ya que se hablaba sobre creación de dobles y no sabíamos lo que era, además de que
+las pruebas debían de ser aisladas.
+- **Respuesta del agente (resumen):** Propuso un test unitario de `PropertyService` con repositorios simulados con Mockito y una carpeta temporal (`@TempDir`) para las fotos

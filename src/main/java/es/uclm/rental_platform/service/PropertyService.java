@@ -7,8 +7,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -17,7 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import es.uclm.rental_platform.domain.Photos;
 import es.uclm.rental_platform.domain.Property;
-import es.uclm.rental_platform.domain.User;
 import es.uclm.rental_platform.repository.PropertyRepository;
 import es.uclm.rental_platform.repository.UserRepository;
 

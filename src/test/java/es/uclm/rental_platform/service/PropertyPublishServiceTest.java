@@ -4,7 +4,6 @@ package es.uclm.rental_platform.service;
 import org.junit.jupiter.api.Test;        // @Test: marca un método como prueba
 import org.junit.jupiter.api.BeforeEach;  // @BeforeEach: se ejecuta antes de CADA test
 import org.junit.jupiter.api.io.TempDir;  // @TempDir: carpeta temporal que se borra sola al terminar
-import org.mockito.internal.matchers.Null;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;  // Assert: compara valor esperado y real
 import static org.junit.jupiter.api.Assertions.assertThrows;  // Assert: comprueba que se lanza una excepción
@@ -15,7 +14,6 @@ import static org.mockito.Mockito.when;   // define qué responde el falso ("cua
 import static org.mockito.Mockito.verify; // comprueba si se llamó a un método y cuántas veces
 import static org.mockito.Mockito.never;  // "nunca": se usa dentro de verify
 import static org.mockito.ArgumentMatchers.any; // "cualquier argumento", para no concretar el valor
-import static org.mockito.ArgumentMatchers.nullable;
 
 import org.springframework.mock.web.MockMultipartFile; // archivo subido falso: nombre, tipo y contenido
 
@@ -24,7 +22,6 @@ import java.io.File;
 import java.util.List;
 
 import es.uclm.rental_platform.domain.Property; 
-import es.uclm.rental_platform.domain.Owner;               
 import es.uclm.rental_platform.repository.PropertyRepository;  
 import es.uclm.rental_platform.repository.UserRepository;      
 
