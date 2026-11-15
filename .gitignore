@@ -7,6 +7,9 @@
 # BlueJ files
 *.ctxt
 
+#base de datos
+data/
+
 #No versionados
 target/
 .env 
