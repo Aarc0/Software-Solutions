@@ -33,7 +33,11 @@ public class SecurityConfig {
             .headers(headers -> headers
                 .frameOptions(frame -> frame.sameOrigin())
             )
-            .formLogin(form -> form.loginPage("/login").permitAll());//Habilita el login hecho por el equipo.
+            .formLogin(form -> form
+                .loginPage("/login")
+                .usernameParameter("usuarioemail")
+                .passwordParameter("contrasena")
+                .permitAll());//Habilita el login hecho por el equipo.
 
         return http.build();
     }
