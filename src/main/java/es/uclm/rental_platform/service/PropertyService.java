@@ -7,8 +7,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -17,14 +15,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import es.uclm.rental_platform.domain.Photos;
 import es.uclm.rental_platform.domain.Property;
-import es.uclm.rental_platform.domain.User;
 import es.uclm.rental_platform.repository.PropertyRepository;
 import es.uclm.rental_platform.repository.UserRepository;
-
-/*
-
-
-*/
 
 @Service 
 public class PropertyService 
@@ -34,33 +26,11 @@ public class PropertyService
     private final Path uploadDirectory;
     //Constructor
     
-    public PropertyService(
-        PropertyRepository property_repo,
-        UserRepository user_repo,
-        @Value("${app.upload.dir:uploads}") String uploadDirectory)
+    public PropertyService(PropertyRepository property_repo, UserRepository user_repo, @Value("${app.upload.dir:uploads}") String uploadDirectory)
     {
         this.property_repo = property_repo;
         this.user_repo = user_repo;
         this.uploadDirectory = Path.of(uploadDirectory).toAbsolutePath().normalize();
-    }
-    
-    public Property crear(Long ownerID, String address, String type, Double nightPrice, int surface)
-    {
-        try 
-        {
-            //Primero verificamos si el dueño existe en la BBDD
-            User user = user_repo.findById(ownerID).orElseThrow();   
-
-            //Si el usuario existe, creamos una propiedad con el dueño y los detalles de la viviendia
-            Property property = new Property(user.getOwner(), address, type, nightPrice, surface);
-
-            return property_repo.save(property);
-        } 
-        catch (NoSuchElementException e) 
-        {
-            throw new IllegalArgumentException("El usuario que se ha intentado obtener no existe");
-        }
-
     }
 
     public Property crear(Property property)
@@ -93,6 +63,8 @@ public class PropertyService
                 Path destination = uploadDirectory.resolve(fileName);
                 savedFiles.add(destination);
                 uploadedPhotos.get(i).transferTo(destination);
+                
+                //!DEFECTO DELIBERADO, COMENTAR ESTA LINEA HACE QUE SALTE ERROR
                 property.getPhotos().add(new Photos("/uploads/" + fileName, property));
             }
 
@@ -134,14 +106,4 @@ public class PropertyService
         }
     }
 
-    public Property crear(String email, String address, String type, Double nightPrice, int surface)
-    {
-        Optional<User> consulta = user_repo.findByEmail(email);
-        if (consulta.isEmpty())
-        {
-            throw new IllegalArgumentException("El usuario con email " + email + " no existe");
-        }
-
-        return crear(consulta.get().getId(), address, type, nightPrice, surface);
-    }
 }
