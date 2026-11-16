@@ -63,6 +63,8 @@ public class PropertyService
                 Path destination = uploadDirectory.resolve(fileName);
                 savedFiles.add(destination);
                 uploadedPhotos.get(i).transferTo(destination);
+                
+                //!DEFECTO DELIBERADO, COMENTAR ESTA LINEA HACE QUE SALTE ERROR
                 property.getPhotos().add(new Photos("/uploads/" + fileName, property));
             }
 

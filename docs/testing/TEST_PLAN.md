@@ -156,13 +156,14 @@ Las pruebas implementadas deberían, cuando resulte aplicable:
 
 > Durante S6 el equipo debe introducir de forma controlada al menos un defecto para comprobar si una prueba es capaz de detectarlo.
 
-- **Prueba seleccionada:**  
-- **Comportamiento protegido:**  
-- **Defecto introducido:**  
-- **Resultado esperado:**  
-- **¿La prueba falló?:** Sí / No  
-- **Corrección realizada:**  
-- **Resultado después de corregir:**  
+- **Prueba seleccionada:** PropertyPublishServiceTest shouldAcceptPropertyWhenProvidingPhotos (CP-02)
+- **Comportamiento protegido:** Al publicar un inmueble con una foto válida, la foto queda asociada al inmueble
+- **Defecto introducido:** Eliminar la parte del código que se encarga de añadir las fotos 
+  - > property.getPhotos().add(new Photos("/uploads/" + fileName, property));
+- **Resultado esperado:** Que el test encargado de detectar el fallo (CP-02) falle debido a que no se añadió la foto
+- **¿La prueba falló?:** Sí
+- **Corrección realizada:** Añadir la linea que se encarga de añadir las fotos a la propiedad   
+- **Resultado después de corregir:** Se espera que no falle ningún test al corregir el fallo lo que consistiría en añadir las fotos a la propiedad correspondiente.
 
 ### Evidencia de ejecución
 
@@ -172,8 +173,12 @@ Las pruebas implementadas deberían, cuando resulte aplicable:
 ```
 
 - **Resultado antes del defecto:**  
+  - [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
 - **Resultado con el defecto:**  
+  - [ERROR] Failures:
+  - [ERROR]   PropertyPublishServiceTest.shouldAcceptPropertyWhenProvidingPhotos:86 expected: <1> but was: <0>
 - **Resultado tras la corrección:**  
+  - [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
 
 > La finalidad no es romper el proyecto sin motivo, sino demostrar que la prueba puede detectar el defecto que afirma proteger.
 
