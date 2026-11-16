@@ -36,12 +36,12 @@
     <header class="mb-8 rounded-[2rem] border border-white/40 bg-white/60 p-6 shadow-[0_20px_60px_-30px_rgba(120,53,15,0.45)] backdrop-blur sm:p-8">
       <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <p class="text-sm font-medium tracking-[0.25em] text-orange-700 uppercase">Tus favoritos</p>
+          <p class="text-sm font-medium tracking-[0.25em] text-orange-700 uppercase">Tus inmuebles favoritos</p>
           <h1 class="mt-3 font-display text-4xl font-semibold text-stone-900 sm:text-5xl">Lista de deseos</h1>
         </div>
         <div class="flex items-center gap-3 rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-sm text-orange-800">
           <span class="inline-flex size-2.5 rounded-full bg-emerald-500"></span>
-          3 inmuebles guardados
+          Tus inmuebles guardados
         </div>
       </div>
     </header>
@@ -51,13 +51,14 @@
         <article class="group overflow-hidden rounded-[1.75rem] border border-stone-200/70 bg-white/80 shadow-[0_25px_60px_-35px_rgba(68,40,10,0.55)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-35px_rgba(68,40,10,0.7)]">
           <div class="grid gap-0 md:grid-cols-[260px_1fr]">
             <div class="overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Apartamento con terraza" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+            <!--imagen para el primer apartamento, hay que enlazarlos con bbdd  -->
+              <img src="" alt="Apartamento con terraza" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
             </div>
             <div class="p-5 sm:p-6">
               <div class="flex flex-wrap items-start justify-between gap-4">
                 <div>
-                  <p class="text-xs font-medium uppercase tracking-[0.2em] text-orange-700">Apartamento</p>
-                  <h2 class="mt-2 font-display text-3xl font-semibold text-stone-900">Edificio Sol de Mayo</h2>
+                  <p class="text-xs font-medium uppercase tracking-[0.2em] text-orange-700">Info si es Apartamento, terraza, casa etc...</p>
+                  <h2 class="mt-2 font-display text-3xl font-semibold text-stone-900">InfoEdificio1</h2>
                 </div>
                 <button class="rounded-full border border-stone-300 bg-white px-3 py-2 text-sm font-medium text-stone-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600">
                   Eliminar
@@ -65,18 +66,18 @@
               </div>
 
               <div class="mt-4 flex flex-wrap items-center gap-4 text-sm text-stone-600">
-                <span>📍 Madrid, Centro</span>
-                <span>🛏️ 2 dormitorios</span>
-                <span>🛁 2 baños</span>
-                <span>📐 86 m²</span>
+                <span> Madrid, Centro</span>
+                <span> num dormitorios</span>
+                <span> num baños</span>
+                <span>  m²</span>
               </div>
 
-              <p class="mt-4 max-w-xl text-stone-600">Apartamento luminoso y moderno con terraza, cocina equipada y acceso directo al transporte público.</p>
+              <p class="mt-4 max-w-xl text-stone-600">descripcion.</p>
 
               <div class="mt-6 flex flex-col gap-4 border-t border-stone-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p class="text-sm text-stone-500">Precio mensual</p>
-                  <p class="text-3xl font-bold text-stone-900">1.450€</p>
+                  <p class="text-3xl font-bold text-stone-900">x€</p>
                 </div>
                 <div class="flex items-center gap-3">
                   <button class="rounded-full border border-stone-300 px-4 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-stone-100">Ver detalles</button>
@@ -85,112 +86,13 @@
               </div>
             </div>
           </div>
-        </article>
-
-        <article class="group overflow-hidden rounded-[1.75rem] border border-stone-200/70 bg-white/80 shadow-[0_25px_60px_-35px_rgba(68,40,10,0.55)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-35px_rgba(68,40,10,0.7)]">
-          <div class="grid gap-0 md:grid-cols-[260px_1fr]">
-            <div class="overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Casa con jardín" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="p-5 sm:p-6">
-              <div class="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <p class="text-xs font-medium uppercase tracking-[0.2em] text-orange-700">Casa</p>
-                  <h2 class="mt-2 font-display text-3xl font-semibold text-stone-900">Villa Los Pinos</h2>
-                </div>
-                <button class="rounded-full border border-stone-300 bg-white px-3 py-2 text-sm font-medium text-stone-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600">
-                  Eliminar
-                </button>
-              </div>
-
-              <div class="mt-4 flex flex-wrap items-center gap-4 text-sm text-stone-600">
-                <span>📍 Valencia, Pinedo</span>
-                <span>🛏️ 3 dormitorios</span>
-                <span>🛁 2 baños</span>
-                <span>📐 140 m²</span>
-              </div>
-
-              <p class="mt-4 max-w-xl text-stone-600">Casa con jardín privado, salón amplio y vistas tranquilas, perfecta para familias o profesionales.</p>
-
-              <div class="mt-6 flex flex-col gap-4 border-t border-stone-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p class="text-sm text-stone-500">Precio mensual</p>
-                  <p class="text-3xl font-bold text-stone-900">2.100€</p>
-                </div>
-                <div class="flex items-center gap-3">
-                  <button class="rounded-full border border-stone-300 px-4 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-stone-100">Ver detalles</button>
-                  <button class="rounded-full bg-orange-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-orange-700">Reservar ya</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="group overflow-hidden rounded-[1.75rem] border border-stone-200/70 bg-white/80 shadow-[0_25px_60px_-35px_rgba(68,40,10,0.55)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-35px_rgba(68,40,10,0.7)]">
-          <div class="grid gap-0 md:grid-cols-[260px_1fr]">
-            <div class="overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Estudio con cocina abierta" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-            </div>
-            <div class="p-5 sm:p-6">
-              <div class="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <p class="text-xs font-medium uppercase tracking-[0.2em] text-orange-700">Estudio</p>
-                  <h2 class="mt-2 font-display text-3xl font-semibold text-stone-900">Loft del Mercado</h2>
-                </div>
-                <button class="rounded-full border border-stone-300 bg-white px-3 py-2 text-sm font-medium text-stone-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600">
-                  Eliminar
-                </button>
-              </div>
-
-              <div class="mt-4 flex flex-wrap items-center gap-4 text-sm text-stone-600">
-                <span>📍 Barcelona, Gràcia</span>
-                <span>🛏️ 1 dormitorio</span>
-                <span>🛁 1 baño</span>
-                <span>📐 58 m²</span>
-              </div>
-
-              <p class="mt-4 max-w-xl text-stone-600">Estudio muy bien conectado, con cocina abierta, decoración moderna y gran luminosidad natural.</p>
-
-              <div class="mt-6 flex flex-col gap-4 border-t border-stone-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p class="text-sm text-stone-500">Precio mensual</p>
-                  <p class="text-3xl font-bold text-stone-900">980€</p>
-                </div>
-                <div class="flex items-center gap-3">
-                  <button class="rounded-full border border-stone-300 px-4 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-stone-100">Ver detalles</button>
-                  <button class="rounded-full bg-orange-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-orange-700">Reservar ya</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
+        
 
       <aside class="space-y-6">
         <div class="rounded-[1.75rem] border border-stone-200/70 bg-white/85 p-6 shadow-[0_25px_60px_-35px_rgba(68,40,10,0.55)] backdrop-blur">
           <h3 class="font-display text-3xl font-semibold text-stone-900">Resumen</h3>
 
-          <div class="mt-6 space-y-4 text-sm text-stone-600">
-            <div class="flex items-center justify-between">
-              <span>Subtotal</span>
-              <span class="font-medium text-stone-900">4.530€</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span>Gastos de gestión</span>
-              <span class="font-medium text-stone-900">180€</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span>Impuestos</span>
-              <span class="font-medium text-stone-900">210€</span>
-            </div>
-          </div>
-
-          <div class="mt-6 border-t border-stone-200 pt-4">
-            <div class="flex items-center justify-between text-lg font-semibold text-stone-900">
-              <span>Total estimado</span>
-              <span>4.920€</span>
-            </div>
-          </div>
+          
 
           <button class="mt-8 w-full rounded-full bg-orange-600 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-orange-700">
             Continuar con la reserva
