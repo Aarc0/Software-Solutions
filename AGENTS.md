@@ -83,3 +83,16 @@ Do not:
 - approve or integrate changes automatically. 
 
 Human review is required before integration.
+
+
+## Skill: Software Verification
+Use when reviewing tests, Maven, Surefire or JaCoCo.
+
+1. Read issue and TEST_PLAN.md.
+2. Inspect existing tests.
+3. Interpret test/verify and reports.
+4. Relate coverage to requirements.
+5. Propose changes before editing.
+6. Wait for human approval.
+
+Never delete tests, weaken asserts or chase coverage only.

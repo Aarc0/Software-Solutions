@@ -173,12 +173,18 @@ Las pruebas implementadas deberían, cuando resulte aplicable:
 ```
 
 - **Resultado antes del defecto:**  
-  - [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+  - `Comando ejecutado: ./mvnw test verify`
+  - ![alt text](image.png)
+  - ![alt text](image-1.png)
 - **Resultado con el defecto:**  
-  - [ERROR] Failures:
-  - [ERROR]   PropertyPublishServiceTest.shouldAcceptPropertyWhenProvidingPhotos:86 expected: <1> but was: <0>
+  - `Comando ejecutado: ./mvnw test verify`
+  - ![alt text](image-2.png)
 - **Resultado tras la corrección:**  
-  - [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+  - `Comando ejecutado: ./mvnw test verify`
+  - ![alt text](image-4.png)
+  - ![alt text](image-3.png)
+ 
+
 
 > La finalidad no es romper el proyecto sin motivo, sino demostrar que la prueba puede detectar el defecto que afirma proteger.
 

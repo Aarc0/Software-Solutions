@@ -16,7 +16,7 @@ import static org.mockito.Mockito.never;  // "nunca": se usa dentro de verify
 import static org.mockito.ArgumentMatchers.any; // "cualquier argumento", para no concretar el valor
 
 import org.springframework.mock.web.MockMultipartFile; // archivo subido falso: nombre, tipo y contenido
-
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;   
 import java.util.List;
@@ -71,20 +71,24 @@ class PropertyPublishServiceTest
     @Test //?CP-02
     void shouldAcceptPropertyWhenProvidingPhotos() 
     {
-
         //Nombre del archivo
         //Nombre original del archivo
         //Tipo del archivo
         //Contenido del archivo
-        MockMultipartFile fotos = new MockMultipartFile("fotos", "foto.png","image/png",new byte[]{1});
-        
+        MockMultipartFile foto1 = new MockMultipartFile("fotos", "foto.png","image/png",new byte[]{1});
+        MockMultipartFile foto2 = new MockMultipartFile("fotos", "foto.jpeg","image/jpg",new byte[]{1});
+        MockMultipartFile foto3 = new MockMultipartFile("fotos", "foto.gif","image/gif",new byte[]{1});
+        MockMultipartFile foto4 = new MockMultipartFile("fotos", "foto.webp","image/webp",new byte[]{1});
+
+        List<MultipartFile> lista = List.of(foto1,foto2,foto3,foto4);
+
         //!Act
-        Property resultado = service.crear(property,List.of(fotos));
+        Property resultado = service.crear(property,lista);
 
         //!Assert
         assertEquals(property, resultado);      //confirma que el servicio devuelve o no el inmueble
-        assertEquals(1, resultado.getPhotos().size()); //Confirma que a la propiedad añadida se la hayan añadido las fotos
-        assertEquals(1, uploadSimulado.list().length); //Comprueba que el archivo se haya escrito en disco
+        assertEquals(lista.size(), resultado.getPhotos().size()); //Confirma que a la propiedad añadida se la hayan añadido las fotos
+        assertEquals(lista.size(), uploadSimulado.list().length); //Comprueba que el archivo se haya escrito en disco
         verify(propertyRepo).save(property); //Verifica que a propertyRepo se le llamo una vez a save pasandole una propiedad 
     }
 
@@ -100,10 +104,5 @@ class PropertyPublishServiceTest
         verify(propertyRepo,never()).save(any());
         assertEquals(0, uploadSimulado.list().length); //Comprueba que no se ha escrito nada en disco
     }
-
-
-
-    
-
 
 }

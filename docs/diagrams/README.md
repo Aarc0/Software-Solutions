@@ -7,7 +7,3 @@ El objetivo de esta carpeta es guardar todos los diagramas que realicemos del pr
 - README.md
 - Diagrama UML corregido
 
-## Tareas a realizar
-
-- Realizar diagrama de CDU
-- Realizar diagrama entidad-relacion

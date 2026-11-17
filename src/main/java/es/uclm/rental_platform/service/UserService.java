@@ -11,9 +11,9 @@ import es.uclm.rental_platform.repository.UserRepository;
 public class UserService {
 	private final UserRepository user_repo;
 	
-	public UserService(UserRepository user_repo, PropertyRepository property_repo){
+	public UserService(UserRepository user_repo, PropertyRepository property_repo)
+	{
 		this.user_repo = user_repo;
-		
 	}
 
 	public User crear(String email, String pass, String name){
