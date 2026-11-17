@@ -7,7 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="min-h-screen bg-linear-to-r from-white to-gray-100">
+<body class="min-h-screen bg-fixed bg-linear-to-br from-amber-50 via-orange-50 to-stone-200">
 
   <header class="py-10">
     <h1 class="font-serif text-center tracking-wide text-4xl md:text-6xl">
@@ -73,13 +73,52 @@
           <label for="baths" class="mb-1 block text-sm font-medium text-gray-700">Baños</label>
           <input id="baths" name="baths" type="number" min="0" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
         </div>
-      </div>
         </div>
-      <div>
-        <label for="address" class="mb-1 block text-sm font-medium text-gray-700">Dirección</label>
-        <input id="address" name="address" type="text" placeholder="Calle, número, ciudad" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
       </div>
-      
+      <div class="grid grid-cols-2 gap-4">
+  <div>
+    <label for="city" class="mb-1 block text-sm font-medium text-gray-700">Ciudad</label>
+    <input
+      id="city"
+      name="city"
+      type="text"
+      placeholder="Ciudad"
+      class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+    />
+  </div>
+
+  <div>
+    <label for="street" class="mb-1 block text-sm font-medium text-gray-700">Calle</label>
+    <input
+      id="street"
+      name="street"
+      type="text"
+      placeholder="Calle"
+      class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+    />
+  </div>
+
+     <div>
+        <label for="portal" class="mb-1 block text-sm font-medium text-gray-700">Portal</label>
+        <input
+          id="portal"
+          name="portal"
+          type="text"
+          placeholder="Portal"
+          class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"/>
+    </div>
+
+     <div>
+      <label for="floor" class="mb-1 block text-sm font-medium text-gray-700">Piso</label>
+      <input
+        id="floor"
+        name="floor"
+        type="text"
+        placeholder="Piso"
+        class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"/>
+      </div>
+    </div>
+  
       <div>
         <label for="description" class="mb-1 block text-sm font-medium text-gray-700">Descripción</label>
         <textarea id="description" name="description" rows="4" class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"></textarea>

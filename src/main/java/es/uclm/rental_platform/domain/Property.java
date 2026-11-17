@@ -14,6 +14,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 @Entity
 @Table(name = "property")
@@ -109,6 +111,17 @@ public class Property {
     @Column(nullable = false)
     private boolean petsAllowed;
 
+    @Column(nullable = false)
+    private String city;
+
+    @Column(nullable = false)
+    private String street;
+
+    @Column
+    private String portal;
+
+    @Column
+    private String floor;
     // Constructor getters y setters necesarios para la capa de aplicacion (service)
     protected Property() {
     }
@@ -119,6 +132,10 @@ public class Property {
         this.type = type;
         this.nightPrice = nightPrice;
         this.surface = surface;
+    }
+
+    public Property(Owner owner, String type, Double nightPrice, Integer surface) {
+        this(owner, null, type, nightPrice, surface);
     }
 
     public Long getId() {
@@ -141,8 +158,35 @@ public class Property {
       return photos;
     }
 
-    public String getAddress(){
+    public String getAddress() {
       return address;
+    }
+
+    public void setAddress(String address) {
+      this.address = address;
+    }
+
+    @PrePersist
+    @PreUpdate
+    public void buildAddress() {
+      StringBuilder composedAddress = new StringBuilder();
+      appendAddressPart(composedAddress, city);
+      appendAddressPart(composedAddress, street);
+      appendAddressPart(composedAddress, portal == null || portal.isBlank() ? null : "Portal " + portal.trim());
+      appendAddressPart(composedAddress, floor == null || floor.isBlank() ? null : "Piso " + floor.trim());
+
+      if (!composedAddress.isEmpty()) {
+        this.address = composedAddress.toString();
+      }
+    }
+
+    private void appendAddressPart(StringBuilder addressBuilder, String part) {
+      if (part != null && !part.isBlank()) {
+        if (!addressBuilder.isEmpty()) {
+          addressBuilder.append(", ");
+        }
+        addressBuilder.append(part.trim());
+      }
     }
 
     public String getType(){
@@ -232,6 +276,17 @@ public class Property {
     public boolean getPetsAllowed() {
       return petsAllowed;
     }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
+
+    public String getStreet() { return street; }
+    public void setStreet(String street) { this.street = street; }
+
+    public String getPortal() { return portal; }
+    public void setPortal(String portal) { this.portal = portal; }
+
+    public String getFloor() { return floor; }
+    public void setFloor(String floor) { this.floor = floor; }
 
     public void setOwner(Owner owner) {
       this.owner = owner;
@@ -249,9 +304,7 @@ public class Property {
       this.photos = photos;
     }
 
-    public void setAddress(String address) {
-      this.address = address;
-    }
+
 
     public void setType(String type) {
       this.type = type;
