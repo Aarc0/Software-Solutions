@@ -58,7 +58,7 @@
 | ID | Funcionalidad / comportamiento | Issue o requisito relacionado | Motivo de prioridad | Estado de pruebas |
 |---|---|---|---|---|
 | FP-01 | Publicar inmueble | #11 | Flujo para controlar la persistencia y errores controlados | Pendiente |
-| FP-02 |  |  |  | Pendiente / Parcial / Cubierto |
+| FP-02 | Listar inmuebles | #48 | Siguiente funcionalidad a implementar | Pendiente |
 | FP-03 |  |  |  | Pendiente / Parcial / Cubierto |
 
 ---
@@ -72,6 +72,8 @@
 | CP-01 | Publicar inmueble | Alta persistente           | Válido       | Inmueble con datos correctos y sin foto | Se publica el inmueble sin fotos | Alta |
 | CP-02 | Publicar inmueble | Alta persistente con fotos | Válido       | Inmueble con datos correctos y con foto | Se guarda con una foto asociada y el archivo existe | Alta |
 | CP-03 | Publicar inmueble | Error controlado           | Inválido     | Imagen con formato no permitido | Lanzar un IllegalArgumentException, no se guarda el inmueble ni ningún archivo | Alta |
+
+| CP - 04 #48 | Listar Inmueble | Correlacion con base de datos | Válido | Inmuebles simulados | Se comprueba que el método findAll() funcione correctamente | Media
 
 ### Convención
 
