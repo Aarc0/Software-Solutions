@@ -32,3 +32,18 @@ Esta capa tiene como proposito proporcionar persistencia a la aplicación median
 `CancelPolicy`: Es el conjunto de politicas de cancelación disponible.
 
 `DataInitializer`: Tiene como función la introducción de datos de prueba y utiliza los métodos de Repository para introducir datos.
+
+## Actualización del esquema H2 local
+
+El 28/11/2026, al consultar la base de datos H2 persistente configurada en `./data/DB_Persistance`, se detectó que la tabla `PROPERTY` no contenía las columnas `CITY` y `STREET`, aunque ambas están definidas como obligatorias en la entidad `Property`. La consulta de alojamientos fallaba con `Column "P1_0.CITY" not found`.
+
+Se actualizaron manualmente las columnas en la base H2 local con sentencias aditivas e idempotentes:
+
+```sql
+ALTER TABLE PROPERTY ADD COLUMN IF NOT EXISTS CITY VARCHAR(255) DEFAULT '' NOT NULL;
+ALTER TABLE PROPERTY ADD COLUMN IF NOT EXISTS STREET VARCHAR(255) DEFAULT '' NOT NULL;
+```
+
+Las filas existentes reciben una cadena vacía en esos campos; no se modificaron ni eliminaron los registros de alojamientos. Tras el cambio, se verificó que ambas columnas existen y que la tabla conserva sus 8 alojamientos.
+
+Esta corrección se aplicó al archivo local `data/DB_Persistance.mv.db`; no es una migración versionada incluida en el código. Otras copias antiguas de la base de datos necesitarán la misma actualización si presentan el mismo error.

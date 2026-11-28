@@ -73,7 +73,9 @@
 | CP-02 | Publicar inmueble | Alta persistente con fotos | Válido       | Inmueble con datos correctos y con foto | Se guarda con una foto asociada y el archivo existe | Alta |
 | CP-03 | Publicar inmueble | Error controlado           | Inválido     | Imagen con formato no permitido | Lanzar un IllegalArgumentException, no se guarda el inmueble ni ningún archivo | Alta |
 
-| CP - 04 #48 | Listar Inmueble | Correlacion con base de datos | Válido | Inmuebles simulados | Se comprueba que el método findAll() funcione correctamente | Media
+| CP-04 | Listar inmueble | Consulta de los alojamientos | Válido | El servicio devuelve una lista vacía simulada | La ruta `/List` muestra la vista `List`, añade la lista al modelo y consulta al servicio | Media |
+| CP-05 | Mostrar detalle de inmueble | Consulta de un alojamiento existente | Válido | Solicitud `GET /property/{id}` con un ID encontrado por el servicio | Se devuelve la vista `PropertyDetail` y el alojamiento queda disponible en el modelo | Media |
+| CP-06 | Mostrar detalle de inmueble | Tratamiento de un ID inexistente | Inválido | Solicitud `GET /property/{id}` con un ID que el servicio no encuentra | El controlador responde con una redirección a `/List` | Media |
 
 ### Convención
 
@@ -110,8 +112,9 @@
 
 | ID caso | Clase / método JUnit | Tipo | Comportamiento protegido | Estado |
 |---|---|---|---|---|
-| CP-01 |  | Unitaria / Integración / Web |  | Implementada / Pendiente |
-| CP-02 |  | Unitaria / Integración / Web |  | Implementada / Pendiente |
+| CP-04 | `HomeControllerTest.getListDevuelveLaVistaList` | Web / controlador | La ruta `/List` devuelve la vista `List`, añade `properties` al modelo y llama a `PropertyService.list()` | Implementada |
+| CP-05 | `PropertyControllerTest.getPropertyConIdExistenteDevuelveDetalleConElInmuebleEnElModelo` | Web / controlador | La ruta de detalle devuelve `PropertyDetail` y entrega en el modelo la propiedad encontrada por `PropertyService.findById(id)` | Implementada |
+| CP-06 | `PropertyControllerTest.getPropertyConIdInexistenteRedirigeAlListado` | Web / controlador | Si `PropertyService.findById(id)` devuelve `Optional.empty()`, la ruta responde con redirección a `/List` | Implementada |
 
 ### Criterios de diseño
 
